@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Data Columns floating: interactive</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- Manrope: friendly geometric sans with great variable weights -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<div class="outer-wrap" id="outer">
+
+  <header class="header-row">
+    <h1 class="headline">
+      <span class="muted-part">Smarter systems spot problems</span><span class="dash">—</span><span class="solid">and Solve them</span>
+    </h1>
+
+    <div class="tabs" role="tablist" id="tabs">
+      <button class="tab active" data-tab="reviews" role="tab" aria-selected="true">
+        <span class="tab-dot"></span>
+        <span class="tab-label">Reviews</span>
+      </button>
+      <button class="tab" data-tab="solve" role="tab" aria-selected="false">
+        <span class="tab-dot"></span>
+        <span class="tab-label">Solve</span>
+      </button>
+      <button class="tab" data-tab="prevent" role="tab" aria-selected="false">
+        <span class="tab-dot"></span>
+        <span class="tab-label">Prevent</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="cards-row">
+
+    <article class="card card-light" id="cardLight">
+      <h2 class="card-title" id="clTitle"></h2>
+      <p class="card-desc" id="clDesc"></p>
+      <div class="card-tags" id="clTags"></div>
+      <div class="card-footer">
+        <span class="footer-left" id="clFootLeft"></span>
+        <button class="footer-right" id="clFootRight"></button>
+      </div>
+    </article>
+
+    <article class="card card-dark" id="cardDark">
+      <h2 class="card-title" id="cdTitle"></h2>
+      <p class="card-desc" id="cdDesc"></p>
+      <p class="card-small" id="cdSmall"></p>
+      <div class="card-divider"></div>
+      <div class="card-footer">
+        <div class="status-pill" id="cdStatus">
+          <span class="check-icon">
+            <svg viewBox="0 0 12 12" fill="none">
+              <path d="M 2.5 6 L 5 8.5 L 9.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span id="cdStatusLabel"></span>
+        </div>
+        <button class="cta-pill" id="cdCta">
+          <span id="cdCtaLabel"></span>
+          <span class="cta-arrow">→</span>
+        </button>
+      </div>
+    </article>
+
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

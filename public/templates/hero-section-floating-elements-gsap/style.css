@@ -1,0 +1,341 @@
+:root {
+  --bg-base: #f5f6f8;
+  --grid-color: #d1d5db;
+  --text-main: #111111;
+  --text-muted: #6b7280;
+  --nav-active: #4f46e5;
+
+  /* 3D Claymorphism Shadows */
+  --clay-shadow-light: 15px 20px 35px rgba(0, 0, 0, 0.08),
+    -10px -10px 20px rgba(255, 255, 255, 0.8),
+    inset 2px 4px 8px rgba(255, 255, 255, 0.9),
+    inset -2px -4px 8px rgba(0, 0, 0, 0.05);
+
+  --clay-shadow-dark: 15px 20px 35px rgba(0, 0, 0, 0.2),
+    inset 2px 4px 8px rgba(255, 255, 255, 0.2),
+    inset -2px -4px 8px rgba(0, 0, 0, 0.6);
+
+  --clay-shadow-color: 15px 20px 35px rgba(0, 0, 0, 0.15),
+    inset 2px 4px 8px rgba(255, 255, 255, 0.4),
+    inset -2px -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-base);
+  /* Dotted Grid Background */
+  background-image: radial-gradient(var(--grid-color) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  color: var(--text-main);
+  overflow-x: hidden;
+  min-height: 150vh; /* Allows for scroll-driven animations */
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* --- Header & Navigation --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 12px;
+  box-shadow: var(--clay-shadow-dark);
+  overflow: hidden;
+}
+
+.logo img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: color 0.2s ease;
+}
+
+nav a.active {
+  color: var(--nav-active);
+}
+
+nav a:hover {
+  color: var(--nav-active);
+}
+
+.btn-connect {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--clay-shadow-dark);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-connect:hover {
+  transform: scale(1.05);
+}
+
+.btn-connect:active {
+  transform: scale(0.95);
+}
+
+/* --- Hero Section --- */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+.hero p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 400px;
+  margin-bottom: 32px;
+}
+
+.btn-follow {
+  background-color: #000;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--clay-shadow-dark);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-follow:hover {
+  transform: scale(1.05);
+}
+
+.btn-follow:active {
+  transform: scale(0.95);
+  box-shadow: inset 4px 8px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* --- 3D Clay Floating Elements --- */
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.clay-block {
+  position: absolute;
+  border-radius: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  transform-style: preserve-3d;
+  background-size: cover;
+  background-position: center;
+}
+
+.clay-block:hover {
+  filter: brightness(1.1);
+}
+
+/* Specific blocks matching the image */
+.cb-1 {
+  width: 80px;
+  height: 80px;
+  background-color: #111;
+  top: 20%;
+  left: 28%;
+  box-shadow: var(--clay-shadow-dark);
+  border-radius: 22px;
+  padding: 15px;
+}
+
+.cb-2 {
+  width: 130px;
+  height: 130px;
+  background-color: #111;
+  top: 40%;
+  left: 12%;
+  box-shadow: var(--clay-shadow-dark);
+  padding: 20px;
+}
+
+.cb-3 {
+  width: 180px;
+  height: 180px;
+  background-color: #e5e5e5;
+  bottom: 15%;
+  left: 24%;
+  box-shadow: var(--clay-shadow-light);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 36px;
+}
+
+.cb-4 {
+  width: 120px;
+  height: 120px;
+  background-color: #8c7ae6;
+  top: 28%;
+  right: 15%;
+  box-shadow: var(--clay-shadow-color);
+}
+
+.cb-5 {
+  width: 220px;
+  height: 220px;
+  background-color: #d1ea40; /* Lime green/yellow */
+  bottom: 12%;
+  right: 18%;
+  box-shadow: var(--clay-shadow-color);
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+/* Placeholder Content for the Clay Blocks to match aesthetic */
+.clay-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+}
+
+.cb-3 img,
+.cb-5 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: none;
+  border-radius: inherit;
+}
+
+/* Interactive Scroll Hint */
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.scroll-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--text-muted);
+  border-radius: 50%;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    display: none;
+  } /* Simplified for mobile view */
+  .cb-1 {
+    left: 10%;
+    top: 15%;
+    width: 60px;
+    height: 60px;
+  }
+  .cb-2 {
+    left: 5%;
+    top: 35%;
+    width: 90px;
+    height: 90px;
+  }
+  .cb-3 {
+    left: 10%;
+    bottom: 20%;
+    width: 120px;
+    height: 120px;
+  }
+  .cb-4 {
+    right: 5%;
+    top: 20%;
+    width: 80px;
+    height: 80px;
+  }
+  .cb-5 {
+    right: 5%;
+    bottom: 15%;
+    width: 140px;
+    height: 140px;
+  }
+}

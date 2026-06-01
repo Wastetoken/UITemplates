@@ -1,0 +1,571 @@
+:root {
+  --bg: #ffffff;
+  --bg-soft: #fafafa;
+  --ink: #0a0a0a;
+  --ink-soft: #1a1a1a;
+  --muted: #7a7a78;
+  --muted-2: #9a9a98;
+  --label-soft: #b0b0ad;
+  --card-bg: #f4f4f1;
+  --card-bg-2: #ededea;
+  --border: #e8e8e3;
+  --green: #4ea05e;
+  --cloud-1: rgba(180, 180, 180, 0.15);
+  --cloud-2: rgba(160, 160, 160, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Geist", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Cloud / atmosphere background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+      ellipse 600px 400px at 10% 25%,
+      var(--cloud-1),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 700px 500px at 90% 20%,
+      var(--cloud-2),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 800px 400px at 50% 90%,
+      rgba(200, 200, 200, 0.08),
+      transparent 70%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 50px 30px 80px;
+}
+
+/* ============= TOP BIRD ICON ============= */
+.top-icon-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.icon-3d {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #2a2a28 0%, #0a0a08 50%, #050503 100%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 -3px 6px rgba(0, 0, 0, 0.6) inset, 0 3px 0 #000,
+    0 6px 0 rgba(0, 0, 0, 0.4), 0 14px 26px -4px rgba(0, 0, 0, 0.3),
+    0 26px 50px -16px rgba(0, 0, 0, 0.2);
+}
+
+.icon-3d::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  width: 60%;
+  height: 35%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50% 50% 80% 80%;
+  pointer-events: none;
+}
+
+.icon-3d svg {
+  width: 50%;
+  height: 50%;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============= BETA PILL ============= */
+.beta-pill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: -0.005em;
+  margin-bottom: 26px;
+}
+
+.beta-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(78, 160, 94, 0.2);
+  flex-shrink: 0;
+}
+
+/* ============= HERO HEADLINE ============= */
+.headline {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 22px;
+}
+
+.headline .word {
+  display: inline-block;
+}
+
+.headline .accent {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  display: inline-block;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  max-width: 460px;
+  margin: 0 auto 38px;
+}
+
+/* ============= WAITLIST FORM ============= */
+.waitlist {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f6f3 100%);
+  border: 1px solid #e8e8e3;
+  border-radius: 100px;
+  padding: 6px;
+  max-width: 460px;
+  margin: 0 auto 22px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 -1px 2px rgba(0, 0, 0, 0.02) inset, 0 2px 4px rgba(0, 0, 0, 0.03),
+    0 12px 26px -8px rgba(0, 0, 0, 0.08);
+}
+
+.waitlist input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  outline: none;
+  padding: 13px 22px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+.waitlist input::placeholder {
+  color: var(--muted-2);
+}
+
+.waitlist button {
+  appearance: none;
+  border: 0;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(180deg, #2a2a2a 0%, #0a0a0a 100%);
+  padding: 14px 26px;
+  border-radius: 100px;
+  cursor: pointer;
+  letter-spacing: -0.005em;
+  flex-shrink: 0;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset,
+    0 -1px 2px rgba(0, 0, 0, 0.5) inset, 0 2px 0 #000,
+    0 4px 0 rgba(0, 0, 0, 0.5), 0 8px 16px -2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.waitlist button:hover {
+  transform: translateY(-1px);
+}
+
+.waitlist button:active {
+  transform: translateY(2px);
+}
+
+/* ============= SOCIAL PROOF ============= */
+.social-proof {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 80px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: -0.005em;
+}
+
+.social-proof .avatars {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-mini {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--bg);
+  margin-left: -10px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #c4a47e, #6e4a2c);
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.avatar-mini:first-child {
+  margin-left: 0;
+}
+.avatar-mini:hover {
+  transform: scale(1.15) translateY(-2px);
+  z-index: 5;
+}
+
+.avatar-mini img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  color: transparent;
+  font-size: 0;
+  position: relative;
+  z-index: 2;
+}
+.avatar-mini svg.fb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* ============= FEATURES ROW ============= */
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 200px;
+}
+
+.feature {
+  text-align: center;
+  cursor: pointer;
+}
+
+.feature .icon-3d {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 18px;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover .icon-3d {
+  transform: translateY(-4px);
+}
+
+.feature h3 {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+/* ============= FLOATING BRAIN ICON ============= */
+.float-brain {
+  position: absolute;
+  right: 14%;
+  margin-top: -90px;
+  z-index: 3;
+}
+.float-brain .icon-3d {
+  width: 52px;
+  height: 52px;
+}
+
+/* ============= MISSION CARD ============= */
+.mission-card {
+  background: linear-gradient(180deg, #f4f4f1 0%, #ededea 100%);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 44px 44px 36px;
+  margin-top: 60px;
+  position: relative;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 -1px 2px rgba(0, 0, 0, 0.02) inset, 0 4px 12px rgba(40, 40, 30, 0.04),
+    0 24px 50px -16px rgba(40, 40, 30, 0.1);
+}
+
+.mission-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: -0.005em;
+  margin-bottom: 36px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.mission-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.mission-body {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+  margin-bottom: 16px;
+}
+
+.mission-details {
+  margin: 28px 0;
+  font-size: 14.5px;
+  line-height: 1.85;
+  letter-spacing: -0.005em;
+}
+
+.mission-details strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.mission-details span {
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+/* Founder */
+.founder {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 36px;
+  padding-top: 20px;
+}
+
+.founder-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #c4a47e, #6e4a2c);
+  flex-shrink: 0;
+  position: relative;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.founder-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  color: transparent;
+  font-size: 0;
+  position: relative;
+  z-index: 2;
+}
+.founder-avatar svg.fb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.founder-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.founder-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.founder-role {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: -0.005em;
+}
+
+/* ============= LIVE NOTIFICATION TICKER ============= */
+.live-notif {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+  color: #ffffff;
+  padding: 12px 18px 12px 14px;
+  border-radius: 100px;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 -1px 2px rgba(0, 0, 0, 0.5) inset, 0 6px 20px -2px rgba(0, 0, 0, 0.25),
+    0 14px 32px -8px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.live-notif.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.live-notif-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(78, 160, 94, 0.7);
+  animation: pulseDot 1.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.85);
+  }
+}
+
+/* Success state for form */
+.waitlist.success input {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Animation initial state */
+.js-ready .top-icon-wrap,
+.js-ready .beta-pill,
+.js-ready .headline .word,
+.js-ready .headline .accent,
+.js-ready .subtitle,
+.js-ready .waitlist,
+.js-ready .social-proof,
+.js-ready .feature,
+.js-ready .float-brain,
+.js-ready .mission-card {
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .page {
+    padding: 30px 20px 60px;
+  }
+  .headline {
+    font-size: 40px;
+  }
+  .features {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .mission-card {
+    padding: 28px 24px;
+  }
+  .mission-title {
+    font-size: 22px;
+  }
+  .waitlist {
+    flex-direction: row;
+  }
+  .waitlist input {
+    font-size: 13.5px;
+    padding: 12px 16px;
+  }
+  .waitlist button {
+    font-size: 13.5px;
+    padding: 12px 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .headline {
+    font-size: 32px;
+  }
+  .float-brain {
+    right: 8%;
+  }
+}

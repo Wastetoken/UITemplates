@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Modern landing page: GSAP</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<section class="hero-card">
+
+  <nav class="nav">
+    <div class="logo">
+      <span class="logo-icon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="8" />
+          <circle cx="12" cy="12" r="3" fill="currentColor" />
+        </svg>
+      </span>
+      DermExcel
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Product
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Brands</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Partners</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="timezone">
+        <div class="tz-lbl">Timezone</div>
+        <div class="tz-time">6:30pm · 23 June 2026</div>
+      </div>
+      <button class="menu-btn">
+        <span class="lines"><span></span><span></span></span>
+        Menu
+      </button>
+    </div>
+  </nav>
+
+  <div class="hero-inner">
+
+    <div class="dermexcel-bg" id="dermexcelBg">
+      <span class="letter">D</span><span class="letter">E</span><span class="letter">R</span><span class="letter">M</span><span class="letter">E</span><span class="letter">X</span><span class="letter">C</span><span class="letter">E</span><span class="letter">L</span>
+    </div>
+
+    <!-- Soft glow under product -->
+    <div class="product-glow" id="productGlow"></div>
+
+    <!-- Product image as centerpiece -->
+    <div class="figure" id="figure">
+      <img src="https://cdn.shopify.com/s/files/1/0185/5999/1872/files/serums-group-clear-bg.png?v=1764614841" alt="Serum products" />
+    </div>
+
+    <div class="explore-card" id="exploreCard">
+      <span class="ex-close">×</span>
+      <div class="ex-tile">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M 5 4 L 5 20 L 9 16 L 12 19 L 15 16 L 19 20 L 19 4 Z M 8 8 L 16 8 L 16 12 L 8 12 Z" />
+        </svg>
+      </div>
+      <div class="ex-content">
+        <div class="ex-title">Explore our<br />Science.</div>
+        <div class="ex-controls">
+          <span class="ctrl">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="18 4 8 12 18 20" />
+            </svg>
+          </span>
+          <span class="ctrl">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="6 4 16 12 6 20" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag" id="tag">Confident Skin Is Our Science</div>
+
+    <div class="headline">
+      <h1 id="headline">
+        <span class="line"><span>Guiding you to</span></span>
+        <span class="line"><span>Healthy Skin through</span></span>
+        <span class="line"><span>Medical Science.</span></span>
+      </h1>
+    </div>
+
+    <div class="stars-row" id="starsRow">
+      <span class="stars">★ ★ ★ ★ ★</span>
+      <span class="customers" id="customerCount">3000+ Customers</span>
+    </div>
+
+    <div class="cta-row" id="ctaRow">
+      <button class="pill-dark">
+        Chat With Us
+        <span class="arrow-c">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </span>
+      </button>
+      <button class="pill-ghost">Our Works</button>
+    </div>
+
+    <div class="partners" id="partners">
+      <div class="p-lbl">Targeting Skin Conditions</div>
+      <div class="partners-grid">
+        <span class="partner-logo"><span class="dot"></span>Aging</span>
+        <span class="partner-logo"><span class="dot"></span>Acne</span>
+        <span class="partner-logo"><span class="dot"></span>Pigmentation</span>
+        <span class="partner-logo"><span class="dot"></span>Rosacea</span>
+        <span class="partner-logo"><span class="dot"></span>Eczema</span>
+        <span class="partner-logo"><span class="dot"></span>Folliculitis</span>
+        <span class="partner-logo"><span class="dot"></span>Sensitivity</span>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="meta-bar">
+    <div class="m-item">Medical Grade Skincare</div>
+    <div class="m-item">Pharmaceutical Formulations</div>
+    <div class="m-item scroll-down" id="scrollDown">Scroll Down
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <polyline points="6 9 12 15 18 9" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+
+  <div class="globe-art" id="globeArt">
+    <svg viewBox="0 0 360 360">
+      <circle cx="180" cy="180" r="170" />
+      <ellipse cx="180" cy="180" rx="170" ry="60" />
+      <ellipse cx="180" cy="180" rx="170" ry="120" />
+      <ellipse cx="180" cy="180" rx="60" ry="170" />
+      <ellipse cx="180" cy="180" rx="120" ry="170" />
+      <line x1="10" y1="180" x2="350" y2="180" />
+      <line x1="180" y1="10" x2="180" y2="350" />
+      <ellipse cx="180" cy="180" rx="20" ry="170" />
+      <ellipse cx="180" cy="180" rx="40" ry="170" />
+      <ellipse cx="180" cy="180" rx="80" ry="170" />
+      <ellipse cx="180" cy="180" rx="100" ry="170" />
+      <ellipse cx="180" cy="180" rx="140" ry="170" />
+      <ellipse cx="180" cy="180" rx="160" ry="170" />
+    </svg>
+  </div>
+
+  <div class="about-top">
+    <div class="about-left mobile-center">
+      <div class="about-tag">About Us</div>
+      <div class="about-globe-line">
+        <span class="g-circ">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <path d="M 12 3 Q 17 12, 12 21 Q 7 12, 12 3" />
+          </svg>
+        </span>
+        <span>Available<br />in USA and Australia</span>
+      </div>
+    </div>
+
+    <p class="about-text">
+      <span>Our Commitement to your skin health is</span>
+      <br>
+      <span class="mute">Results Beyond Your Expectations</span>
+    </p>
+  </div>
+
+  <div class="about-bottom">
+    <div class="social-explore">
+      <span class="se-lbl">Explore our social</span>
+      <div class="social-icons">
+        <span class="si x">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M 4 4 L 11 12 L 4 20 L 7 20 L 12.5 13.7 L 17 20 L 20 20 L 13 11.3 L 19.5 4 L 16.5 4 L 12 9.5 L 8 4 Z" />
+          </svg>
+        </span>
+        <span class="si dim">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M 4 12 Q 12 4, 20 12 Q 12 20, 4 12 Z" fill="none" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+        </span>
+        <span class="si dim">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <circle cx="12" cy="12" r="2.5" />
+          </svg>
+        </span>
+      </div>
+    </div>
+    <button class="about-link">
+      About Us
+      <svg class="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="7" y1="17" x2="17" y2="7" />
+        <polyline points="7 7 17 7 17 17" />
+      </svg>
+    </button>
+  </div>
+</section>
+
+<section class="pill-row">
+  <div class="pills-strip" id="pillsStrip">
+    <div class="bigpill bp-we">Start</div>
+    <div class="bigpill bp-create">Your</div>
+    <div class="bigpill bp-arrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <polyline points="14 6 20 12 14 18" />
+      </svg>
+    </div>
+    <div class="bigpill bp-future">Journey</div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

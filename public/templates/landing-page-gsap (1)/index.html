@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Landing page: GSAP</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="grain"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="logo"><span class="logo-dot"></span> Side Hustle</div>
+  <ul class="nav-links">
+    <li><a href="#">Episodes</a></li>
+    <li><a href="#">Guests</a></li>
+    <li><a href="#">Community</a></li>
+    <li><a href="#">Notes</a></li>
+  </ul>
+  <button class="sub-pill">Subscribe</button>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <h1 class="top-left" id="topLeft">
+    <span class="word"><span>COMMUNITY DRIVEN</span>
+  </h1>
+
+  <div class="top-right" id="topRight">
+    <div>RADIO</div>
+    <div>MUSIC</div>
+    <div>PLAYER</div>
+    <div>INTERFACE</div>
+  </div>
+
+  <div class="cards-row" id="cardsRow">
+    <div class="pcard pc-0" data-rot="-7" data-depth="12">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=540&fit=crop&q=80" alt="" />
+    </div>
+    <div class="pcard pc-1" data-rot="3" data-depth="14">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&q=80" alt="" />
+    </div>
+    <div class="pcard pc-2" data-rot="-3" data-depth="10">
+      <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=540&fit=crop&q=80" alt="" />
+    </div>
+    <div class="pcard pc-3" data-rot="2" data-depth="6">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=500&h=680&fit=crop&q=80" alt="" />
+    </div>
+    <div class="pcard pc-4" data-rot="-2" data-depth="9">
+      <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=540&fit=crop&q=80" alt="" />
+    </div>
+    <div class="pcard pc-5" data-rot="4" data-depth="13">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=320&fit=crop&q=80" alt="" />
+    </div>
+    <div class="pcard pc-6" data-rot="-5" data-depth="11">
+      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=540&fit=crop&q=80" alt="" />
+    </div>
+  </div>
+
+  <div class="listen-wrap">
+    <h2 class="listen" id="listenText">
+      <span class="letter">Our people</span>
+    </h2>
+  </div>
+
+  <p class="description" id="desc">
+    Whether well-known or less recognized, we welcome inspiring personalities to Side Hustle podcast who have extraordinary journeys.
+  </p>
+</section>
+
+<!-- ============ SECTION 2: EPISODES ============ -->
+<section class="episodes">
+  <div class="ep-head">
+    <div>
+      <div class="eyebrow">Featured Voices · This Season</div>
+      <h2>Conversations<br />about the bet<br />before it pays.</h2>
+    </div>
+    <p>Long-form interviews with people building things on the side that eventually became their main thing. New drops every Tuesday.</p>
+  </div>
+
+  <div class="ep-grid" id="epGrid">
+    <article class="ep-card">
+      <div class="ep-cover">
+        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&h=450&fit=crop&q=80" alt="" />
+        <button class="ep-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="6 4 20 12 6 20" />
+          </svg></button>
+      </div>
+      <div class="ep-meta"><span class="ep-num">Ep. 042</span><span class="ep-dur">58 min</span></div>
+      <h3>The Tuesday<br />economy</h3>
+      <div class="ep-host">with Ravi Saigal</div>
+    </article>
+    <article class="ep-card">
+      <div class="ep-cover">
+        <img src="https://images.unsplash.com/photo-1521119989659-a83eee488004?w=600&h=450&fit=crop&q=80" alt="" />
+        <button class="ep-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="6 4 20 12 6 20" />
+          </svg></button>
+      </div>
+      <div class="ep-meta"><span class="ep-num">Ep. 041</span><span class="ep-dur">62 min</span></div>
+      <h3>Building<br />before noon</h3>
+      <div class="ep-host">with Maya Okafor</div>
+    </article>
+    <article class="ep-card">
+      <div class="ep-cover">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=450&fit=crop&q=80" alt="" />
+        <button class="ep-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="6 4 20 12 6 20" />
+          </svg></button>
+      </div>
+      <div class="ep-meta"><span class="ep-num">Ep. 040</span><span class="ep-dur">47 min</span></div>
+      <h3>When the side<br />becomes the main</h3>
+      <div class="ep-host">with Iris Caldwell</div>
+    </article>
+    <article class="ep-card">
+      <div class="ep-cover">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=600&h=450&fit=crop&q=80" alt="" />
+        <button class="ep-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="6 4 20 12 6 20" />
+          </svg></button>
+      </div>
+      <div class="ep-meta"><span class="ep-num">Ep. 039</span><span class="ep-dur">71 min</span></div>
+      <h3>Quiet money,<br />loud lessons</h3>
+      <div class="ep-host">with Theo Vance</div>
+    </article>
+    <article class="ep-card">
+      <div class="ep-cover">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=450&fit=crop&q=80" alt="" />
+        <button class="ep-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="6 4 20 12 6 20" />
+          </svg></button>
+      </div>
+      <div class="ep-meta"><span class="ep-num">Ep. 038</span><span class="ep-dur">54 min</span></div>
+      <h3>The 9-to-5 is<br />not the enemy</h3>
+      <div class="ep-host">with Naomi Park</div>
+    </article>
+    <article class="ep-card">
+      <div class="ep-cover">
+        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600&h=450&fit=crop&q=80" alt="" />
+        <button class="ep-play"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="6 4 20 12 6 20" />
+          </svg></button>
+      </div>
+      <div class="ep-meta"><span class="ep-num">Ep. 037</span><span class="ep-dur">65 min</span></div>
+      <h3>Inheritance<br />of the hustle</h3>
+      <div class="ep-host">with Kit Bellamy</div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: SUBSCRIBE ============ -->
+<section class="sub-cta">
+  <div class="sub-inner">
+    <h2>Get the drop.<br /><em>Tuesdays only.</em></h2>
+    <p>One email when the episode goes live, with a 60-second written summary and the three quotes worth saving. That's it.</p>
+    <div class="sub-form">
+      <input type="email" placeholder="your@email.com" />
+      <button>
+        Subscribe
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </button>
+    </div>
+    <div class="listen-on">
+      <span class="lo-lbl">Also on</span>
+      <span class="lo-pill">Spotify</span>
+      <span class="lo-pill">Apple Podcasts</span>
+      <span class="lo-pill">Overcast</span>
+      <span class="lo-pill">YouTube</span>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Floating icons hero section: GSAP</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="container">
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="logo">SaaSync</div>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#download" class="btn-download">
+      Download For
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91 1.65.17 2.79.83 3.55 2.06-3.2 1.9-2.73 6.47.53 7.79-.69 1.05-1.46 2.06-2.29 2.81zM15.13 4.41c1.13-1.35 1.5-2.75 1.29-4.11-1.31.11-2.9 1-3.88 2.15-1.01 1.15-1.58 2.65-1.3 4.07 1.48.06 2.81-.82 3.89-2.11z" />
+      </svg>
+    </a>
+  </nav>
+
+  <header class="hero" id="hero">
+    <div class="clay-icon icon-blue">
+      <svg class="clay-svg" viewBox="0 0 24 24">
+        <path d="M12 2L2 22h20L12 2zm0 6l5 10H7l5-10z" fill="white" />
+      </svg>
+    </div>
+    <div class="clay-icon icon-green">
+      <svg class="clay-svg" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="5" fill="white" />
+        <path d="M12 2A10 10 0 002 12A10 10 0 0012 22A10 10 0 0022 12A10 10 0 0012 2z" fill="none" stroke="white" stroke-width="2" />
+      </svg>
+    </div>
+    <div class="clay-icon icon-white">
+      <svg class="clay-svg" viewBox="0 0 24 24">
+        <path d="M12 2v20m10-10H2m17.07-7.07l-14.14 14.14M4.93 4.93l14.14 14.14" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="clay-icon icon-gradient">
+      <svg class="clay-svg" viewBox="0 0 24 24">
+        <path d="M12 2l2.4 7.6H22l-6.2 4.5 2.4 7.6L12 17.2 5.8 21.7l2.4-7.6L2 9.6h7.6L12 2z" fill="white" />
+      </svg>
+    </div>
+
+    <div class="social-proof gs-reveal">
+      <div class="avatar-group">
+        <div class="avatar"><img src="https://ui-avatars.com/api/?name=J&background=FFD700&color=fff&size=24" alt="User"></div>
+        <div class="avatar"><img src="https://ui-avatars.com/api/?name=S&background=4A90E2&color=fff&size=24" alt="User"></div>
+        <div class="avatar"><img src="https://ui-avatars.com/api/?name=M&background=50C878&color=fff&size=24" alt="User"></div>
+      </div>
+      <span>200+ Businesses Scaled</span>
+    </div>
+
+    <h1 class="gs-reveal">Power Up Your<br>Workflow</h1>
+    <p class="gs-reveal">Discover A Powerful Tool Designed To Streamline Your Tasks, Enhance Collaboration, And Drive Efficiency</p>
+    <a href="#" class="btn-primary gs-reveal">Learn More &nbsp;&nbsp;&rsaquo;</a>
+  </header>
+
+  <section class="features" id="features">
+    <div class="feature-item feature-reveal">
+      <div class="feature-icon-wrapper">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+      </div>
+      <h3>Efficiency</h3>
+      <p>Reduce Manual Effort With Automated Workflows</p>
+    </div>
+
+    <div class="feature-item feature-reveal">
+      <div class="feature-icon-wrapper">
+        <svg viewBox="0 0 24 24">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      </div>
+      <h3>Collaboration</h3>
+      <p>Work Together Seamlessly, No Matter Where Your Team Is Located</p>
+    </div>
+
+    <div class="feature-item feature-reveal">
+      <div class="feature-icon-wrapper">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 3v18h18" />
+          <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+        </svg>
+      </div>
+      <h3>Scalability</h3>
+      <p>Our Platform Grows With Your Business</p>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

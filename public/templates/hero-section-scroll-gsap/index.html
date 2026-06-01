@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Hero section: Scroll GSAP</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<div class="container">
+  <div class="hero">
+    <div class="status-badge gsap-fade">
+      <span class="pill-yellow">2 projects</span>
+      <span class="status-text">available in July</span>
+    </div>
+
+    <h1 class="gsap-fade">
+      <span class="light-text">Web designer</span> crafting<br>purposeful online presence
+    </h1>
+
+    <p class="subheadline gsap-fade">
+      Beautifully designed, easy-to-use websites that help you stand out and connect with your audience.
+    </p>
+
+    <div class="cta-group gsap-fade">
+      <button class="btn-dark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+        </svg>
+        Let's Talk
+      </button>
+      <button class="btn-light">Email Me</button>
+    </div>
+  </div>
+
+  <div class="gallery-wrapper">
+    <div class="gallery-card card-left">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" alt="Web Design Concept 1">
+    </div>
+
+    <div class="gallery-card card-right">
+      <img src="https://images.unsplash.com/photo-1481481831872-463285c57703?auto=format&fit=crop&q=80&w=400" alt="Web Design Concept 2">
+    </div>
+
+    <div class="gallery-card card-center floating-element">
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=600" alt="Main Portfolio Piece">
+    </div>
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

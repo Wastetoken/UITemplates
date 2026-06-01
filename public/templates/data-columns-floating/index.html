@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Data Columns floating</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- Manrope: geometric modern sans with humanist warmth -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<div class="panel" id="panel">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1 class="heading">
+      <span class="word">Smarter</span>
+      <span class="word">systems</span>
+      <span class="word">spot</span>
+      <span class="word">problems</span>
+      <span class="word em-dash">—</span>
+      <span class="word strong">and</span>
+      <span class="word strong">Solve</span>
+      <span class="word strong">them</span>
+    </h1>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="reviews">
+        <span class="tab-dot" id="tabDot"></span>
+        Reviews
+      </button>
+      <button class="tab" data-tab="solve">Solve</button>
+      <button class="tab" data-tab="prevent">Prevent</button>
+    </div>
+  </div>
+
+  <!-- CARDS -->
+  <div class="cards-row">
+
+    <!-- LIGHT CARD -->
+    <div class="card-light" id="cardLight">
+      <h2 class="card-title">Deployment (v2.8.5)<br>added uncached lookups</h2>
+      <p class="card-body">Requests are overloading the database, causing latency spikes and broken frontend responses.</p>
+
+      <div class="tags">
+        <span class="tag">v2.8.5</span>
+        <span class="tag green">Open source</span>
+        <span class="tag">database</span>
+      </div>
+
+      <div class="card-footer">
+        <span class="spikes-found"><span class="count">(27)</span> spikes found</span>
+        <a class="read-more" href="#">Read more</a>
+      </div>
+    </div>
+
+    <!-- DARK CARD -->
+    <div class="card-dark" id="cardDark">
+      <h2 class="card-title">Secure deployment</h2>
+      <p class="card-body">No deploys with uncached fetches. CI must load-test any component that pulls user data on render.</p>
+
+      <div class="v286-line">v2.8.6 securely encrypted</div>
+
+      <div class="card-dark-footer">
+        <button class="btn-deployed" id="btnDeployed">
+          <span class="deployed-check">
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 2.5 6 L 5 8.5 L 9.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          Deployed
+        </button>
+
+        <button class="btn-restart" id="btnRestart">
+          Restart investigation
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 3 8 H 13 M 9 4 L 13 8 L 9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
