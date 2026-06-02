@@ -366,6 +366,22 @@ const templates = [
     category: 'landing',
     folder: 'bento-grid-gsap',
     screenshot: '/screenshots/46.png'
+  },
+  {
+    id: 47,
+    name: 'Structural Scrolling',
+    description: 'Scroll-driven structural animation with smooth transitions',
+    category: 'interactive',
+    folder: 'Structural-scrolling',
+    screenshot: '/screenshots/47.png'
+  },
+  {
+    id: 48,
+    name: 'Responsive GSAP Slider with Button Wave Effect',
+    description: 'Responsive slider with animated button wave effects',
+    category: 'interactive',
+    folder: 'responsive-gsap-slider-with-button-wave-effect',
+    screenshot: '/screenshots/48.png'
   }
 ];
 
