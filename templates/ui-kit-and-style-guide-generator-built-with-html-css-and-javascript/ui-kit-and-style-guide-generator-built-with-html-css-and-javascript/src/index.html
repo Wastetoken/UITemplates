@@ -1,0 +1,401 @@
+<body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <div class="mesh-grid" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand-lockup" href="#" aria-label="Aurora UI Kit Generator home">
+      <span class="brand-mark" id="brandMark">A</span>
+      <span>
+        <strong id="appBrandName">Aurora Kit</strong>
+        <small>adaptive style-guide generator</small>
+      </span>
+    </a>
+    <div class="topbar-actions">
+      <button class="ghost-btn" id="toggleCompact" type="button" title="Toggle focus mode">Focus mode</button>
+      <button class="primary-btn" id="exportThemeTop" type="button">Export system</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="control-panel" aria-label="Design generator controls">
+      <div class="panel-head">
+        <p class="eyebrow">Creative console</p>
+        <h1>Generate a premium UI kit in seconds.</h1>
+        <p>Control the brand DNA, color science, typography, density, depth, and interaction feel. Every token updates the guide live.</p>
+      </div>
+
+      <section class="control-card">
+        <div class="section-title">
+          <span>01</span>
+          <h2>Brand seed</h2>
+        </div>
+        <label class="field">
+          <span>Brand name</span>
+          <input id="brandName" type="text" value="Aurora Kit" maxlength="34" />
+        </label>
+        <div class="two-col">
+          <label class="field color-field">
+            <span>Primary seed</span>
+            <input id="seedColor" type="color" value="#6D5DFB" />
+          </label>
+          <label class="field color-field">
+            <span>Accent spark</span>
+            <input id="accentColor" type="color" value="#00D5FF" />
+          </label>
+        </div>
+        <label class="field">
+          <span>Color harmony</span>
+          <select id="harmony">
+            <option value="analogous">Analogous glow</option>
+            <option value="complementary">Complementary punch</option>
+            <option value="triadic">Triadic editorial</option>
+            <option value="monochrome">Monochrome luxe</option>
+            <option value="cyber">Cyber spectrum</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Visual mood</span>
+          <select id="mood">
+            <option value="crystal">Crystal glass</option>
+            <option value="midnight">Midnight SaaS</option>
+            <option value="editorial">Editorial luxury</option>
+            <option value="playful">Playful creator</option>
+            <option value="minimal">Quiet minimal</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="control-card">
+        <div class="section-title">
+          <span>02</span>
+          <h2>System behavior</h2>
+        </div>
+        <label class="field">
+          <span>Mode</span>
+          <select id="mode">
+            <option value="dark">Dark spatial</option>
+            <option value="light">Light studio</option>
+            <option value="auto">Auto contrast</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Typeface personality</span>
+          <select id="fontPair">
+            <option value="neo">Neo geometric</option>
+            <option value="humanist">Humanist product</option>
+            <option value="editorial">Editorial contrast</option>
+            <option value="mono">Technical mono</option>
+          </select>
+        </label>
+        <label class="range-field">
+          <span>Base font size <output id="baseFontOut">16px</output></span>
+          <input id="baseFont" type="range" min="14" max="20" value="16" />
+        </label>
+        <label class="range-field">
+          <span>Type scale <output id="scaleOut">1.20</output></span>
+          <input id="scaleRatio" type="range" min="1.12" max="1.36" value="1.20" step="0.01" />
+        </label>
+        <label class="range-field">
+          <span>Radius energy <output id="radiusOut">18px</output></span>
+          <input id="radius" type="range" min="0" max="34" value="18" />
+        </label>
+        <label class="range-field">
+          <span>Interface density <output id="densityOut">1.00</output></span>
+          <input id="density" type="range" min="0.82" max="1.28" value="1" step="0.01" />
+        </label>
+        <label class="range-field">
+          <span>Chromatic lift <output id="saturationOut">1.00</output></span>
+          <input id="saturation" type="range" min="0.65" max="1.45" value="1" step="0.01" />
+        </label>
+      </section>
+
+      <section class="control-card control-actions">
+        <button class="primary-btn full" id="randomize" type="button">Generate creative direction</button>
+        <div class="two-col">
+          <button class="ghost-btn" id="saveTheme" type="button">Save</button>
+          <button class="ghost-btn" id="resetTheme" type="button">Reset</button>
+        </div>
+        <p class="hint">Tip: press <kbd>G</kbd> to regenerate, <kbd>E</kbd> to export, and <kbd>F</kbd> for focus mode.</p>
+      </section>
+    </aside>
+
+    <section class="workspace" aria-label="Generated UI kit preview">
+      <div class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">Live generated style guide</p>
+          <h2 id="heroTitle">Aurora Kit design system</h2>
+          <p id="heroDescription">A cohesive, accessible, production-ready token system with live components, CSS variables, JSON, SCSS, and Tailwind exports.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" id="jumpTokens" type="button">Inspect tokens</button>
+            <button class="ghost-btn" id="copyCSSHero" type="button">Copy CSS variables</button>
+          </div>
+        </div>
+        <div class="orbital-preview" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="glass-device">
+            <span></span><span></span><span></span>
+            <div class="device-card mini-card-a"></div>
+            <div class="device-card mini-card-b"></div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="tabbar" aria-label="Style guide sections">
+        <button class="tab is-active" data-tab="guide" type="button">Guide</button>
+        <button class="tab" data-tab="components" type="button">Components</button>
+        <button class="tab" data-tab="tokens" type="button">Tokens</button>
+        <button class="tab" data-tab="exports" type="button">Exports</button>
+      </nav>
+
+      <section class="tab-panel is-active" id="guide">
+        <div class="section-grid">
+          <article class="preview-card span-8">
+            <div class="card-head">
+              <div>
+                <p class="eyebrow">Palette intelligence</p>
+                <h3>Color tokens</h3>
+              </div>
+              <button class="ghost-btn micro" id="copyPalette" type="button">Copy palette</button>
+            </div>
+            <div class="swatch-grid" id="swatchGrid"></div>
+          </article>
+
+          <article class="preview-card span-4">
+            <div class="card-head">
+              <div>
+                <p class="eyebrow">Accessibility</p>
+                <h3>Contrast matrix</h3>
+              </div>
+            </div>
+            <div class="contrast-list" id="contrastList"></div>
+          </article>
+        </div>
+
+        <div class="section-grid">
+          <article class="preview-card span-7">
+            <div class="card-head">
+              <div>
+                <p class="eyebrow">Typography engine</p>
+                <h3>Modular scale</h3>
+              </div>
+            </div>
+            <div class="type-scale" id="typeScale"></div>
+          </article>
+
+          <article class="preview-card span-5">
+            <div class="card-head">
+              <div>
+                <p class="eyebrow">Layout foundation</p>
+                <h3>Spacing, radius, shadow</h3>
+              </div>
+            </div>
+            <div class="foundation-grid" id="foundationGrid"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="components">
+        <div class="component-board">
+          <article class="preview-card component-stage span-8">
+            <div class="product-nav">
+              <div class="nav-left">
+                <span class="brand-mark small" id="previewBrandMark">A</span>
+                <strong id="previewBrandName">Aurora Kit</strong>
+              </div>
+              <div class="nav-links">
+                <a href="#">Dashboard</a>
+                <a href="#">Systems</a>
+                <a href="#">Insights</a>
+              </div>
+              <button class="primary-btn small-btn" type="button">Launch</button>
+            </div>
+
+            <div class="showcase-hero">
+              <div>
+                <span class="badge">New visual language</span>
+                <h3>Build interfaces that feel alive.</h3>
+                <p>Adaptive tokens power buttons, forms, cards, charts, navigation, feedback states, and high-conversion product surfaces.</p>
+                <div class="button-row">
+                  <button class="primary-btn" type="button">Start project</button>
+                  <button class="secondary-btn" type="button">View docs</button>
+                  <button class="ghost-btn" type="button">Prototype</button>
+                </div>
+              </div>
+              <div class="metric-stack">
+                <div class="metric-card">
+                  <span>Conversion</span>
+                  <strong>+38%</strong>
+                  <div class="sparkline"><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="metric-card floating">
+                  <span>Latency</span>
+                  <strong>42ms</strong>
+                  <small>global edge average</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="component-grid-mini">
+              <label class="demo-field">
+                <span>Email</span>
+                <input type="email" value="design@aurora.dev" />
+              </label>
+              <label class="demo-field">
+                <span>Role</span>
+                <select>
+                  <option>Creative director</option>
+                  <option>Product designer</option>
+                  <option>Developer</option>
+                </select>
+              </label>
+              <div class="toggle-card">
+                <span>Adaptive contrast</span>
+                <label class="switch"><input type="checkbox" checked /><b></b></label>
+              </div>
+              <div class="progress-card">
+                <span>System readiness</span>
+                <div class="progress"><i style="width: 76%"></i></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="preview-card span-4">
+            <div class="card-head">
+              <div>
+                <p class="eyebrow">Interaction states</p>
+                <h3>Buttons & badges</h3>
+              </div>
+            </div>
+            <div class="stacked-demo">
+              <button class="primary-btn full" type="button">Primary action</button>
+              <button class="secondary-btn full" type="button">Secondary action</button>
+              <button class="ghost-btn full" type="button">Subtle action</button>
+              <div class="badge-row">
+                <span class="badge">Default</span>
+                <span class="badge success">Success</span>
+                <span class="badge warning">Warning</span>
+                <span class="badge danger">Danger</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="preview-card span-4">
+            <p class="eyebrow">Feedback</p>
+            <h3>Toast notification</h3>
+            <div class="toast-demo">
+              <span class="toast-icon">✓</span>
+              <div>
+                <strong>Style guide generated</strong>
+                <p>Tokens synced across every preview component.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="preview-card span-4">
+            <p class="eyebrow">Commerce</p>
+            <h3>Pricing card</h3>
+            <div class="pricing-card">
+              <span class="badge">Studio</span>
+              <strong>$49</strong>
+              <p>Unlimited exports, token sync, and brand snapshots.</p>
+              <button class="primary-btn full" type="button">Choose plan</button>
+            </div>
+          </article>
+
+          <article class="preview-card span-4">
+            <p class="eyebrow">Data surface</p>
+            <h3>System table</h3>
+            <table class="demo-table">
+              <thead>
+                <tr>
+                  <th>Token</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Color</td>
+                  <td><span class="status-dot"></span>Synced</td>
+                </tr>
+                <tr>
+                  <td>Type</td>
+                  <td><span class="status-dot"></span>Synced</td>
+                </tr>
+                <tr>
+                  <td>Radius</td>
+                  <td><span class="status-dot"></span>Synced</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tokens">
+        <article class="preview-card">
+          <div class="card-head">
+            <div>
+              <p class="eyebrow">Generated source of truth</p>
+              <h3>Design token inspector</h3>
+            </div>
+            <input class="token-search" id="tokenSearch" type="search" placeholder="Search tokens..." />
+          </div>
+          <div class="token-table-wrap">
+            <table class="token-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Value</th>
+                  <th>Preview</th>
+                  <th>Copy</th>
+                </tr>
+              </thead>
+              <tbody id="tokenTable"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section class="tab-panel" id="exports">
+        <article class="preview-card export-card">
+          <div class="card-head">
+            <div>
+              <p class="eyebrow">Developer handoff</p>
+              <h3>Export production tokens</h3>
+            </div>
+            <div class="export-actions">
+              <button class="ghost-btn micro" id="copyExport" type="button">Copy current</button>
+              <button class="primary-btn micro" id="downloadExport" type="button">Download</button>
+            </div>
+          </div>
+          <div class="export-tabs" role="tablist" aria-label="Export formats">
+            <button class="export-tab is-active" data-export="css" type="button">CSS</button>
+            <button class="export-tab" data-export="json" type="button">JSON</button>
+            <button class="export-tab" data-export="scss" type="button">SCSS</button>
+            <button class="export-tab" data-export="tailwind" type="button">Tailwind</button>
+            <button class="export-tab" data-export="figma" type="button">Figma Tokens</button>
+          </div>
+          <pre class="code-block"><code id="exportCode"></code></pre>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+  <template id="swatchTemplate">
+    <button class="swatch" type="button">
+      <span class="swatch-color"></span>
+      <span class="swatch-meta"><strong></strong><small></small></span>
+    </button>
+  </template>
+
+  <template id="toastTemplate">
+    <div class="toast">
+      <span class="toast-icon">✓</span>
+      <p></p>
+    </div>
+  </template>
+</body>

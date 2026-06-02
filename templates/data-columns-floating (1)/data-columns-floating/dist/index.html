@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Data Columns floating</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<div class="container">
+  <div class="header">
+    <div class="title">
+      <span class="light">Smarter systems spot<br>problems</span>
+      <span class="dark">— and Solve them</span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active"><span class="dot orange"></span> Reviews</button>
+      <button class="tab">Solve</button>
+      <button class="tab">Prevent</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="left-panel">
+      <h2>Deployment (v2.8.5)<br>added uncached lookups</h2>
+      <p>Requests are overloading the database, causing latency spikes and broken frontend responses.</p>
+
+      <div class="tags">
+        <div class="tag tag-white">v2.8.5</div>
+        <div class="tag tag-green">Open source</div>
+        <div class="tag tag-white">database</div>
+      </div>
+
+      <div class="left-footer">
+        <span class="spikes">(27) spikes found</span>
+        <a href="#" class="read-more">Read more</a>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <h2>Secure deployment</h2>
+      <p>No deploys with uncached fetches.<br>CI must load-test any component that pulls user data on render.</p>
+
+      <div class="right-footer-text">
+        v2.8.6 securely encrypted
+      </div>
+
+      <div class="right-actions">
+        <div class="status-btn">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+          </svg>
+          Deployed
+        </div>
+        <button class="action-btn">
+          Restart investigation &rarr;
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

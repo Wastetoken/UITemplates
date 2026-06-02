@@ -1,0 +1,310 @@
+:root {
+  --bg-color: #eef2ef; /* Light greenish-gray matte background */
+  --text-dark: #2a2e2b;
+  --text-muted: #757d78;
+  --clay-highlight: rgba(255, 255, 255, 0.9);
+  --clay-shadow: rgba(0, 0, 0, 0.08);
+  --clay-inset-light: rgba(255, 255, 255, 0.6);
+  --clay-inset-dark: rgba(0, 0, 0, 0.05);
+  --accent-line: #c8cfca;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  min-height: 150vh; /* To demonstrate scroll */
+}
+
+/* Container & Grid Layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 60px;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* --- LEFT COLUMN --- */
+.col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 300px;
+}
+
+.stat-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-number {
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: -2px;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.stat-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.circle-widget {
+  position: relative;
+  width: 120px;
+  height: 180px;
+}
+
+.circle-text {
+  width: 120px;
+  height: 120px;
+  animation: spin 15s linear infinite;
+}
+
+.circle-widget svg text {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  fill: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.vertical-line {
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100px;
+  background-color: var(--text-dark);
+}
+
+.vertical-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--text-dark);
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bottom-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- CENTER COLUMN (3D CLAY GRID) --- */
+.col-center {
+  position: relative;
+  width: 430px;
+  height: 580px;
+  perspective: 1000px;
+}
+
+.grid-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tile {
+  position: absolute;
+  width: 100px;
+  height: 130px;
+  left: var(--x);
+  top: var(--y);
+  background-image: url("https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800");
+  background-size: 430px 580px;
+  background-position: calc(-1 * var(--x)) calc(-1 * var(--y));
+  background-color: var(--bg-color);
+  border-radius: 16px;
+
+  /* The 3D Matte Clay Effect */
+  border: 4px solid var(--bg-color);
+  box-shadow: 15px 15px 30px var(--clay-shadow),
+    -10px -10px 20px var(--clay-highlight);
+
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: border-color 0.3s ease;
+}
+
+/* Inner inset shadow overlay to render OVER the background image */
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  box-shadow: inset 4px 4px 10px var(--clay-inset-light),
+    inset -4px -4px 10px var(--clay-inset-dark);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Subtle overlay to matte the image */
+.tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(238, 242, 239, 0.05);
+  border-radius: 12px;
+  backdrop-filter: contrast(0.95);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- RIGHT COLUMN --- */
+.col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 320px;
+  padding-left: 20px;
+}
+
+.discover-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.discover-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-line);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.discover-circle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: var(--text-dark);
+  border-radius: 50%;
+}
+
+.discover-btn:hover .discover-circle {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+}
+
+.discover-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.participants-section h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.avatars-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatars img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-color);
+  margin-left: -15px;
+  object-fit: cover;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.avatars img:first-child {
+  margin-left: 0;
+}
+
+.more-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-line);
+  border: none;
+}
+
+.quote-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.signature {
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 80px;
+  }
+  .col-left,
+  .col-right {
+    max-width: 600px;
+    align-items: center;
+    padding: 0;
+  }
+  .vertical-line {
+    display: none;
+  }
+  .circle-widget {
+    height: 120px;
+  }
+  .avatars-wrapper {
+    justify-content: center;
+  }
+}

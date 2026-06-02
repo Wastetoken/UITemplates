@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Data / Icons landing page: GSAP</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<div class="grain"></div>
+
+<!-- ============ POSTER / HERO ============ -->
+<section class="poster">
+  <div class="credit" id="credit">@DERMEXCEL</div>
+
+  <div class="diagram" id="diagram">
+    <!-- Background SVG: rings + connecting lines -->
+    <svg class="bg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
+      <!-- Concentric rings -->
+      <circle class="ring ring-1" cx="400" cy="250" r="60" />
+      <circle class="ring ring-2" cx="400" cy="250" r="110" />
+      <circle class="ring ring-3" cx="400" cy="250" r="160" />
+      <circle class="ring ring-4" cx="400" cy="250" r="210" />
+
+      <!-- Connecting lines from each tile to brain center -->
+      <path class="link" id="link-1" d="M 140 75 Q 250 170, 395 247" />
+      <path class="link" id="link-2" d="M 660 75 Q 545 170, 405 247" />
+      <path class="link" id="link-3" d="M 80 270 Q 230 258, 388 250" />
+      <path class="link" id="link-4" d="M 720 270 Q 570 258, 412 250" />
+      <path class="link" id="link-5" d="M 140 425 Q 250 335, 395 253" />
+      <path class="link" id="link-6" d="M 660 425 Q 545 335, 405 253" />
+    </svg>
+
+    <!-- Brain at center -->
+    <div class="brain" id="brain">🧠</div>
+
+    <!-- 6 Icon tiles -->
+    <div class="icon-tile tile-1" data-name="Krisp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAF7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 5 4 L 5 20" />
+        <path d="M 5 12 L 13 4" />
+        <path d="M 5 12 L 13 20" />
+        <path d="M 14 8 L 19 6 L 19 10" />
+        <path d="M 14 16 L 19 14 L 19 18" />
+      </svg>
+    </div>
+
+    <div class="icon-tile tile-2" data-name="Loom">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAF7" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="8" />
+        <circle cx="9.5" cy="10.5" r="0.8" fill="#FAFAF7" />
+        <circle cx="14.5" cy="10.5" r="0.8" fill="#FAFAF7" />
+        <path d="M 9 14 Q 12 17, 15 14" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <div class="icon-tile tile-3" data-name="Otter">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAF7" stroke-width="2" stroke-linecap="round">
+        <ellipse cx="12" cy="12" rx="8" ry="9" />
+        <line x1="6" y1="18" x2="18" y2="6" />
+      </svg>
+    </div>
+
+    <div class="icon-tile tile-4" data-name="Rytr">
+      <svg viewBox="0 0 72 24" fill="#FAFAF7">
+        <text x="0" y="19" font-family="Archivo, sans-serif" font-size="30" font-weight="800" letter-spacing="-1.2">DHS</text>
+      </svg>
+    </div>
+
+    <div class="icon-tile tile-5" data-name="Sider">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAF7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M 15 8 Q 12 7, 10 9 Q 9 11, 11 12.5 Q 13 13.5, 14 14.5 Q 15 16, 13 16.8 Q 11 17.3, 9 16" />
+      </svg>
+    </div>
+
+    <div class="icon-tile tile-6" data-name="Scribe">
+      <svg viewBox="0 0 24 24" fill="#FAFAF7">
+        <path d="M 8 5 Q 14 5, 16 9 Q 17 12, 13 13 L 11 13 Q 7 13, 8 16 Q 9 19, 15 19" stroke="#FAFAF7" stroke-width="2.2" fill="none" stroke-linecap="round" />
+      </svg>
+    </div>
+  </div>
+
+  <h1 class="headline">
+    <span class="line line-1"><span class="inner">CONFIDENCE</span></span>
+    <span class="line line-2"><span class="inner">IS OUR SCIENCE</span></span>
+  </h1>
+
+  <div class="pointer" id="pointer">👉</div>
+
+  <div class="reinvent" id="reinvent">
+    R&nbsp;E&nbsp;I&nbsp;N&nbsp;V&nbsp;E&nbsp;N&nbsp;T<span class="gap"></span>Y&nbsp;O&nbsp;U&nbsp;R&nbsp;S&nbsp;E&nbsp;L&nbsp;F
+  </div>
+</section>
+
+<!-- ============ SECTION 2: EXTENSIONS DETAIL ============ -->
+<section class="section-extensions">
+  <div class="ext-head">
+    <div>
+      <div class="ext-eyebrow">Six brain extensions · curated</div>
+      <h2>Six tabs<br />and your brain<br />got upgraded.</h2>
+    </div>
+    <p>A handpicked stack of AI tools that quietly sit in your browser and do the thinking-adjacent work for you. Install once, reinvent forever.</p>
+  </div>
+
+  <div class="ext-grid" id="extGrid">
+    <!-- Card 1 -->
+    <article class="ext-card">
+      <div class="ext-card-top">
+        <div class="mini-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAF7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 5 4 L 5 20" />
+            <path d="M 5 12 L 13 4" />
+            <path d="M 5 12 L 13 20" />
+            <path d="M 14 8 L 19 6 L 19 10" />
+            <path d="M 14 16 L 19 14 L 19 18" />
+          </svg>
+        </div>
+        <span class="tag">Audio · Calls</span>
+      </div>
+      <span class="num">01 / 06</span>
+      <h3>Krisp</h3>
+      <p>Removes background noise from any meeting in real time. Crystal-clear voice, even from a busy café — no studio required.</p>
+      <button class="add-pill">
+        Add extension
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </button>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="ext-card">
+      <div class="ext-card-top">
+        <div class="mini-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAF7" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="8" />
+            <circle cx="9.5" cy="10.5" r="0.8" fill="#FAFAF7" />
+            <circle cx="14.5" cy="10.5" r="0.8" fill="#FAFAF7" />
+            <path d="M 9 14 Q 12 17, 15 14" />
+          </svg>
+        </div>
+        <span class="tag">Video · Loom</span>
+      </div>
+      <span class="num">02 / 06</span>
+      <h3>Loom</h3>
+      <p>Record your screen, voice and face in a click. Async video messages that replace meetings — explain anything in 30 seconds flat.</p>
+      <button class="add-pill">
+        Add extension
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </button>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="ext-card">
+      <div class="ext-card-top">
+        <div class="mini-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAF7" stroke-width="2" stroke-linecap="round">
+            <ellipse cx="12" cy="12" rx="8" ry="9" />
+            <line x1="6" y1="18" x2="18" y2="6" />
+          </svg>
+        </div>
+        <span class="tag">Transcripts</span>
+      </div>
+      <span class="num">03 / 06</span>
+      <h3>Otter.ai</h3>
+      <p>Live transcription with speaker labels. Search every meeting you've ever had, surface the decisions, and never take notes again.</p>
+      <button class="add-pill">
+        Add extension
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </button>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="ext-card">
+      <div class="ext-card-top">
+        <div class="mini-tile wide">
+          <svg viewBox="0 0 72 24" fill="#FAFAF7">
+            <text x="0" y="19" font-family="Archivo, sans-serif" font-size="20" font-weight="800" letter-spacing="-1.2">Rytr</text>
+          </svg>
+        </div>
+        <span class="tag">Writing · AI</span>
+      </div>
+      <span class="num">04 / 06</span>
+      <h3>Rytr</h3>
+      <p>Draft emails, captions and long-form content with an AI that learned your tone. Stop staring at blinking cursors — start editing instead.</p>
+      <button class="add-pill">
+        Add extension
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </button>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="ext-card">
+      <div class="ext-card-top">
+        <div class="mini-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FAFAF7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M 15 8 Q 12 7, 10 9 Q 9 11, 11 12.5 Q 13 13.5, 14 14.5 Q 15 16, 13 16.8 Q 11 17.3, 9 16" />
+          </svg>
+        </div>
+        <span class="tag">Sidebar · GPT</span>
+      </div>
+      <span class="num">05 / 06</span>
+      <h3>Sider</h3>
+      <p>Summon any LLM as a sidebar on every webpage. Summarize articles, rewrite paragraphs, ask follow-ups — without ever opening a new tab.</p>
+      <button class="add-pill">
+        Add extension
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </button>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="ext-card">
+      <div class="ext-card-top">
+        <div class="mini-tile">
+          <svg viewBox="0 0 24 24" fill="#FAFAF7">
+            <path d="M 8 5 Q 14 5, 16 9 Q 17 12, 13 13 L 11 13 Q 7 13, 8 16 Q 9 19, 15 19" stroke="#FAFAF7" stroke-width="2.2" fill="none" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span class="tag">How-to · Guides</span>
+      </div>
+      <span class="num">06 / 06</span>
+      <h3>Scribe</h3>
+      <p>Auto-document any process while you click through it. Step-by-step guides with screenshots, generated in real time — perfect for handoffs.</p>
+      <button class="add-pill">
+        Add extension
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </button>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: REINVENT CTA ============ -->
+<section class="reinvent-cta">
+  <div class="cta-inner">
+    <div class="cta-tag">R&nbsp;E&nbsp;I&nbsp;N&nbsp;V&nbsp;E&nbsp;N&nbsp;T&nbsp;&nbsp;Y&nbsp;O&nbsp;U&nbsp;R&nbsp;S&nbsp;E&nbsp;L&nbsp;F</div>
+    <h2 id="ctaTitle">Your browser, <em>your second brain</em>.</h2>
+    <p>Six extensions. Zero excuses. Stack them, shape them around how you actually work, and let the machines handle the friction.</p>
+    <button class="cta-btn" id="ctaBtn">
+      Install all six
+      <span class="arrow-c">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="7" y1="17" x2="17" y2="7" />
+          <polyline points="7 7 17 7 17 17" />
+        </svg>
+      </span>
+    </button>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

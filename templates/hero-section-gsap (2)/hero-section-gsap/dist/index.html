@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Hero section: GSAP</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<div class="container">
+  <header class="gsap-fade">
+    <div class="logo">
+      <div class="logo-icon">a</div>
+      ADERS
+    </div>
+    <ul class="nav-links">
+      <li>Vision</li>
+      <li>Approach</li>
+      <li>Investments</li>
+    </ul>
+    <div class="header-actions">
+      <span style="display:flex; align-items:center; gap:4px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+        En v
+      </span>
+      <a href="#" class="btn-download">Download</a>
+    </div>
+  </header>
+
+  <main class="hero">
+
+    <div class="hero-left">
+      <h1 class="headline serif gsap-stagger">
+        INVESTING IN <br>
+        <span class="yellow-pill clay-anim">
+          <span class="asterisk">*</span>
+          <span>YOUR</span>
+        </span> <br>
+
+        <div class="avatars-inline clay-anim">
+          <img src="https://i.pravatar.cc/100?img=33" alt="User 1">
+          <img src="https://i.pravatar.cc/100?img=47" alt="User 2">
+        </div>
+        FUTURE
+
+        <svg class="squiggle gsap-fade" viewBox="0 0 100 80" fill="none" stroke="#111" stroke-width="1.5">
+          <path d="M5,40 Q30,10 50,40 T90,40" />
+          <path d="M80,30 L95,40 L85,55" />
+        </svg>
+      </h1>
+
+      <div class="sub-text gsap-fade">
+        <div class="shield-icon">$</div>
+        <p>Want to expand your wealth? Get access to American and crypto markets with a multi-currency account.</p>
+      </div>
+
+      <div class="stats gsap-fade">
+        <div class="stats-number serif">
+          22 <div class="stats-icon">↑</div>
+        </div>
+        <p>The rise in the CNBC investor ranking</p>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="bento-wrapper gsap-bento">
+
+        <div class="bento-grid">
+          <div class="bento-cell cell-yellow">
+            <div class="icon-pill clay-anim">↕</div>
+            <p>Shares, ETFs<br>and cryptos</p>
+          </div>
+          <div class="bento-cell"></div>
+          <div class="bento-cell cell-image">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=400" alt="Architecture">
+          </div>
+
+          <div class="bento-cell"></div>
+          <div class="bento-cell cell-chart">
+            <div class="small-pill">Stock</div>
+            <svg class="chart-svg" viewBox="0 0 100 40" fill="none" stroke-width="2">
+              <path d="M0,30 Q15,10 30,25 T60,20 T90,10" stroke="#000" />
+              <path d="M0,20 Q20,35 40,25 T80,25 T100,15" stroke="var(--color-yellow)" />
+            </svg>
+          </div>
+          <div class="bento-cell"></div>
+
+          <div class="bento-cell"></div>
+          <div class="bento-cell"></div>
+          <div class="bento-cell"></div>
+        </div>
+
+        <div class="black-card">
+          <h3 class="serif">30%</h3>
+          <p>Our automated approach to alternative <strong>assets improves</strong></p>
+
+          <img class="man-cutout clay-anim" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Investor">
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<img class="bg-building" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" alt="Cityscape">
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

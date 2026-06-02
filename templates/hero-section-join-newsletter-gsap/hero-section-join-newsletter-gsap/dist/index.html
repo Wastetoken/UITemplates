@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Hero section: Join newsletter GSAP</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- Geist Sans (modern geometric sans) + Instrument Serif (elegant italic serif for accent) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Instrument+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<div class="page">
+
+  <!-- ============= TOP BIRD ICON ============= -->
+  <div class="top-icon-wrap">
+    <div class="icon-3d" id="topIcon">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <!-- Bird/dove silhouette -->
+        <path d="M 22 5 C 21 4.5 20 4.3 19 4.5 C 18 4.7 17 5.2 16 6 C 14 5 12 5 10 5.5 C 8 6 6 7 4.5 8.5 C 3 10 2.5 12 3 14 C 3 14 4 13 5 13 C 6 13 7 13.5 8 14 C 9 14.5 10 15 11 15 C 12 15.2 13 15 14 14.5 C 15.5 14 16.5 13 17 12 C 17.5 11 18 9.5 19 9 C 20 8.5 21 8 22 7.5 C 22.5 7 22.5 6 22 5 Z" fill="currentColor" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- ============= BETA PILL ============= -->
+  <div class="beta-pill">
+    <span class="beta-dot"></span>
+    Beta goes live soon
+  </div>
+
+  <!-- ============= HEADLINE ============= -->
+  <h1 class="headline">
+    <span class="word">Early</span>
+    <span class="word">Access</span>
+    <span class="word">to</span>
+    <br>
+    <span class="word">Future</span>
+    <span class="word">of</span>
+    <span class="word">AI</span>
+    <span class="accent">Growth</span>
+  </h1>
+
+  <!-- ============= SUBTITLE ============= -->
+  <p class="subtitle">
+    Automate tasks, unlock insights, and scale your team's productivity — all in one place
+  </p>
+
+  <!-- ============= WAITLIST FORM ============= -->
+  <form class="waitlist" id="waitlistForm" onsubmit="return false;">
+    <input type="email" id="emailInput" placeholder="Your Email" autocomplete="email" />
+    <button type="submit" id="joinBtn">Join Waitlist</button>
+  </form>
+
+  <!-- ============= SOCIAL PROOF ============= -->
+  <div class="social-proof">
+    <div class="avatars">
+      <span class="avatar-mini">
+        <svg class="fb" viewBox="0 0 32 32">
+          <circle cx="16" cy="12" r="5" fill="rgba(255,255,255,0.45)" />
+          <path d="M 4 30 Q 4 20 16 20 Q 28 20 28 30 Z" fill="rgba(255,255,255,0.45)" />
+        </svg>
+        <img src="https://i.pravatar.cc/80?img=47" alt="" aria-hidden="true" />
+      </span>
+      <span class="avatar-mini">
+        <svg class="fb" viewBox="0 0 32 32">
+          <circle cx="16" cy="12" r="5" fill="rgba(255,255,255,0.45)" />
+          <path d="M 4 30 Q 4 20 16 20 Q 28 20 28 30 Z" fill="rgba(255,255,255,0.45)" />
+        </svg>
+        <img src="https://i.pravatar.cc/80?img=32" alt="" aria-hidden="true" />
+      </span>
+      <span class="avatar-mini">
+        <svg class="fb" viewBox="0 0 32 32">
+          <circle cx="16" cy="12" r="5" fill="rgba(255,255,255,0.45)" />
+          <path d="M 4 30 Q 4 20 16 20 Q 28 20 28 30 Z" fill="rgba(255,255,255,0.45)" />
+        </svg>
+        <img src="https://i.pravatar.cc/80?img=68" alt="" aria-hidden="true" />
+      </span>
+    </div>
+    <span>
+      Join <strong id="userCount">8,258</strong>+ SaaS &amp; AI founders
+    </span>
+  </div>
+
+  <!-- ============= FEATURES ============= -->
+  <section class="features">
+    <div class="feature" data-feature="automation">
+      <div class="icon-3d">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Gear / settings -->
+          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5" />
+          <path d="M 12 2 L 12 5 M 12 19 L 12 22 M 4.93 4.93 L 7.05 7.05 M 16.95 16.95 L 19.07 19.07 M 2 12 L 5 12 M 19 12 L 22 12 M 4.93 19.07 L 7.05 16.95 M 16.95 7.05 L 19.07 4.93" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+      </div>
+      <h3>Smart Automation</h3>
+      <p>Automate everyday work fast</p>
+    </div>
+
+    <div class="feature" data-feature="insights">
+      <div class="icon-3d">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Refresh / cycle -->
+          <path d="M 4 12 A 8 8 0 0 1 16 5.5 L 18.5 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          <path d="M 14.5 7 L 18.5 7 L 18.5 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 20 12 A 8 8 0 0 1 8 18.5 L 5.5 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          <path d="M 9.5 17 L 5.5 17 L 5.5 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <h3>AI Insights</h3>
+      <p>Unlock data-driven sharp clarity</p>
+    </div>
+
+    <div class="feature" data-feature="collab">
+      <div class="icon-3d">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- People -->
+          <circle cx="8.5" cy="9" r="3" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="16" cy="10" r="2.4" stroke="currentColor" stroke-width="1.4" />
+          <path d="M 3 19 Q 3 14 8.5 14 Q 14 14 14 19" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+          <path d="M 14 18 Q 14 14.5 16 14.5 Q 20 14.5 20 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+      </div>
+      <h3>Team Collaboration</h3>
+      <p>Boost smart workflows with AI</p>
+    </div>
+  </section>
+
+  <!-- ============= FLOATING BRAIN ICON ============= -->
+  <div class="float-brain">
+    <div class="icon-3d" id="brainIcon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Brain -->
+        <path d="M 9 5 Q 5 5 4 9 Q 3 13 5 15 Q 4 17 5 19 Q 7 21 10 20 Q 12 21 14 20 Q 17 21 19 19 Q 20 17 19 15 Q 21 13 20 9 Q 19 5 15 5 Q 13 4 12 4.5 Q 11 4 9 5 Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" />
+        <path d="M 12 5 L 12 20" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+        <path d="M 9 9 Q 11 11 9 13" stroke="currentColor" stroke-width="1" stroke-linecap="round" fill="none" />
+        <path d="M 15 9 Q 13 11 15 13" stroke="currentColor" stroke-width="1" stroke-linecap="round" fill="none" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- ============= MISSION CARD ============= -->
+  <section class="mission-card">
+    <div class="mission-tag">Mission</div>
+    <h2 class="mission-title">The New Era of AI-Powered SaaS</h2>
+    <p class="mission-body">
+      Our platform puts AI at the center of your workflow — helping teams automate repetitive tasks, generate instant insights, and collaborate smarter.
+    </p>
+    <p class="mission-body">
+      With faster decisions and seamless integration, you scale your SaaS product without limits.
+    </p>
+
+    <div class="mission-details">
+      <div><strong>Launch Date:</strong><span>November 2025</span></div>
+      <div><strong>Key Benefit:</strong><span>Save 10+ hours weekly</span></div>
+      <div><strong>Built For:</strong><span>SaaS &amp; AI founders</span></div>
+    </div>
+
+    <div class="founder">
+      <span class="founder-avatar">
+        <svg class="fb" viewBox="0 0 44 44">
+          <circle cx="22" cy="16" r="7" fill="rgba(255,255,255,0.45)" />
+          <path d="M 6 42 Q 6 28 22 28 Q 38 28 38 42 Z" fill="rgba(255,255,255,0.45)" />
+        </svg>
+        <img src="https://i.pravatar.cc/100?img=24" alt="" aria-hidden="true" />
+      </span>
+      <div class="founder-info">
+        <span class="founder-name">Daniel Hayes</span>
+        <span class="founder-role">Founder of EarlyBird</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Live notification ticker (fixed position) -->
+<div class="live-notif" id="liveNotif">
+  <span class="live-notif-dot"></span>
+  <span id="liveNotifText">Sarah from Berlin just joined</span>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

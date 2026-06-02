@@ -1,0 +1,452 @@
+:root {
+  /* Color Palette */
+  --bg-color: #dee4eb;
+  --card-base: #e8eef5;
+  --card-white: #ffffff;
+  --accent-blue: #7fa0c1;
+  --accent-dark: #17181c;
+  --text-main: #131a22;
+  --text-muted: #6b7a8b;
+  /* Claymorphism Shadows */
+  --shadow-dark: #c0cddd;
+  --shadow-light: #f8fbff;
+  --radius-lg: 42px;
+  --radius-md: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 2vw;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+/* Base Clay Styling */
+.clay {
+  border-radius: var(--radius-lg);
+  background: var(--card-base);
+  /* Outer shadow for 3D pop + Inner shadow for matte/chunky volume */
+  box-shadow: 14px 14px 28px var(--shadow-dark),
+    -14px -14px 28px var(--shadow-light),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s ease;
+}
+
+.clay:hover {
+  transform: translateY(-4px);
+  box-shadow: 18px 18px 36px var(--shadow-dark),
+    -18px -18px 36px var(--shadow-light),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.clay-white {
+  background: var(--card-white);
+  box-shadow: 12px 12px 24px var(--shadow-dark);
+}
+
+.clay-blue {
+  background: var(--accent-blue);
+  color: white;
+  box-shadow: 8px 8px 20px var(--shadow-dark),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.3);
+  border: none;
+}
+
+/* Grid Layout */
+.bento-container {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 260px 220px 1fr;
+  grid-template-rows: 90px 240px 240px 120px 120px;
+  gap: 24px;
+  grid-template-areas:
+    "logo nav nav"
+    "woman vr hero"
+    "woman nft hero"
+    "create circle release"
+    "cube circle release";
+}
+
+/* --- Individual Grid Items --- */
+/* 1. Header Elements */
+.logo-box {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  gap: 12px;
+  border-bottom-right-radius: 60px;
+  /* Custom organic shape tweak */
+}
+
+.nav-area {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.nav-links span {
+  position: relative;
+}
+
+.nav-links span::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--text-main);
+  transition: width 0.3s ease;
+}
+
+.nav-links span:hover::after {
+  width: 100%;
+}
+
+.btn-signup {
+  padding: 12px 28px;
+  border-radius: 40px;
+  border: 1.5px solid var(--text-main);
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-signup:hover {
+  background: var(--text-main);
+  color: white;
+}
+
+/* 2. Left Column Visualls */
+.woman-card {
+  grid-area: woman;
+  padding: 0;
+  overflow: hidden;
+}
+
+.woman-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.vr-card {
+  grid-area: vr;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.vr-card img {
+  width: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.15));
+  transition: transform 0.5s ease;
+}
+
+.vr-card:hover img {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.nft-card {
+  grid-area: nft;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.nft-card h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* 3. Hero Section */
+.hero-card {
+  grid-area: hero;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-card h1 {
+  font-size: 4.8rem;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+  color: #121a23;
+}
+
+.hero-card p {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  max-width: 80%;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.btn-primary {
+  background: var(--accent-dark);
+  color: white;
+  padding: 18px 36px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s;
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.icon-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent-dark);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn.blue {
+  background: var(--accent-blue);
+}
+
+/* 4. Bottom Elements */
+.creators-card {
+  grid-area: create;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.creators-card h5 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatars img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -10px;
+}
+
+.avatars img:first-child {
+  margin-left: 0;
+}
+
+.circle-card {
+  grid-area: circle;
+  background: var(--accent-dark);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.circle-text-svg {
+  width: 100%;
+  height: 100%;
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.crosshair {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.cube-card {
+  grid-area: cube;
+  background: #111;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube-card img {
+  width: 120%;
+  opacity: 0.8;
+  mix-blend-mode: luminosity;
+}
+
+.release-card {
+  grid-area: release;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.release-header h5 {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.release-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 60%;
+}
+
+.sleeve-img {
+  position: absolute;
+  right: -20px;
+  top: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid var(--card-base);
+  /* Faux masking */
+}
+
+.sleeve-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.release-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 20px;
+}
+
+.pulse-dot {
+  width: 30px;
+  height: 30px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--accent-blue);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1100px) {
+  .bento-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo nav"
+      "hero hero"
+      "woman vr"
+      "woman nft"
+      "release release"
+      "create circle"
+      "cube circle";
+  }
+
+  .hero-card h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "nav"
+      "hero"
+      "woman"
+      "vr"
+      "nft"
+      "release"
+      "circle"
+      "create"
+      "cube";
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .circle-card {
+    aspect-ratio: 1;
+  }
+}

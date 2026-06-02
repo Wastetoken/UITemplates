@@ -1,0 +1,471 @@
+<!-- Wix Madefor Display: clean modern sans (weights 400-800) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<div class="page">
+  <div class="stage">
+
+    <!-- ============= FLOATING CARDS ============= -->
+
+    <!-- FC 1: Orange terracotta with 6 stones -->
+    <div class="float-card fc-1" data-card="1">
+      <svg viewBox="0 0 100 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="orangeBg1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c8623e" />
+            <stop offset="100%" stop-color="#a04a26" />
+          </linearGradient>
+          <radialGradient id="stoneGrad" cx="0.3" cy="0.3" r="0.7">
+            <stop offset="0%" stop-color="#9a8a7a" />
+            <stop offset="100%" stop-color="#3a2818" />
+          </radialGradient>
+        </defs>
+        <rect width="100" height="120" fill="url(#orangeBg1)" />
+        <!-- 6 stones arranged in 3 rows of 2 -->
+        <ellipse cx="35" cy="38" rx="8" ry="6" fill="url(#stoneGrad)" />
+        <ellipse cx="62" cy="35" rx="10" ry="7" fill="url(#stoneGrad)" />
+        <ellipse cx="38" cy="62" rx="9" ry="6" fill="url(#stoneGrad)" />
+        <ellipse cx="65" cy="60" rx="7" ry="5" fill="url(#stoneGrad)" />
+        <ellipse cx="34" cy="85" rx="11" ry="7" fill="url(#stoneGrad)" />
+        <ellipse cx="63" cy="86" rx="8" ry="6" fill="url(#stoneGrad)" />
+        <!-- Subtle stone highlights -->
+        <ellipse cx="33" cy="36" rx="2" ry="1.5" fill="rgba(255,220,180,0.4)" />
+        <ellipse cx="60" cy="33" rx="2.5" ry="2" fill="rgba(255,220,180,0.4)" />
+        <ellipse cx="36" cy="60" rx="2" ry="1.5" fill="rgba(255,220,180,0.4)" />
+        <ellipse cx="32" cy="83" rx="3" ry="2" fill="rgba(255,220,180,0.4)" />
+      </svg>
+    </div>
+
+    <!-- FC 2: Dark photo of person in suit -->
+    <div class="float-card fc-2" data-card="2">
+      <svg viewBox="0 0 130 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="darkBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a1410" />
+            <stop offset="100%" stop-color="#050302" />
+          </linearGradient>
+          <linearGradient id="suitGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3a2c24" />
+            <stop offset="100%" stop-color="#1a1208" />
+          </linearGradient>
+          <linearGradient id="skinDark" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6a4830" />
+            <stop offset="100%" stop-color="#3a2418" />
+          </linearGradient>
+        </defs>
+        <rect width="130" height="180" fill="url(#darkBg)" />
+        <!-- Person silhouette -->
+        <!-- Body/suit -->
+        <path d="M 30 180 L 30 100 Q 30 75 65 70 Q 100 75 100 100 L 100 180 Z" fill="url(#suitGrad)" />
+        <!-- Hand resting / suit lapels -->
+        <path d="M 50 90 L 65 110 L 80 90 L 80 130 L 50 130 Z" fill="#0a0805" />
+        <!-- Neck -->
+        <rect x="56" y="58" width="18" height="18" fill="url(#skinDark)" />
+        <!-- Head -->
+        <ellipse cx="65" cy="45" rx="20" ry="24" fill="url(#skinDark)" />
+        <!-- Hair -->
+        <path d="M 45 40 Q 42 22 52 16 Q 75 12 84 22 Q 90 35 88 45 Q 80 32 70 32 Q 55 32 45 40 Z" fill="#1a0a05" />
+        <!-- Eyes -->
+        <ellipse cx="58" cy="45" rx="2" ry="1.3" fill="#0a0503" />
+        <ellipse cx="72" cy="45" rx="2" ry="1.3" fill="#0a0503" />
+        <!-- Mouth -->
+        <path d="M 60 55 Q 65 57 70 55" stroke="#1a0a05" stroke-width="1" fill="none" />
+        <!-- Subtle rim light on right -->
+        <ellipse cx="85" cy="50" rx="10" ry="30" fill="rgba(255,230,200,0.05)" />
+      </svg>
+    </div>
+
+    <!-- FC 3: Blue crystalline pattern -->
+    <div class="float-card fc-3" data-card="3">
+      <svg viewBox="0 0 110 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="blueBg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a4a8a" />
+            <stop offset="100%" stop-color="#1a3068" />
+          </linearGradient>
+        </defs>
+        <rect width="110" height="100" fill="url(#blueBg)" />
+        <!-- Snowflake / crystalline shape -->
+        <g transform="translate(55, 65)" stroke="#e8f0f8" stroke-width="1" fill="rgba(255,255,255,0.85)">
+          <path d="M 0 -15 L 3 -10 L 5 -13 L 5 -7 L 10 -10 L 7 -5 L 13 -3 L 7 -1 L 10 5 L 5 3 L 5 9 L 3 5 L 0 15 L -3 5 L -5 9 L -5 3 L -10 5 L -7 -1 L -13 -3 L -7 -5 L -10 -10 L -5 -7 L -5 -13 L -3 -10 Z" />
+          <circle r="2" fill="#ffffff" />
+        </g>
+        <!-- Small specks -->
+        <circle cx="20" cy="20" r="1.5" fill="#ffffff" opacity="0.8" />
+        <circle cx="85" cy="25" r="1" fill="#ffffff" opacity="0.7" />
+        <circle cx="35" cy="40" r="0.8" fill="#ffffff" opacity="0.6" />
+        <circle cx="90" cy="55" r="1.2" fill="#ffffff" opacity="0.7" />
+        <circle cx="15" cy="80" r="0.8" fill="#ffffff" opacity="0.6" />
+        <!-- Petal shapes -->
+        <path d="M 22 30 L 28 28 L 26 34 Z" fill="#ffffff" opacity="0.6" />
+        <path d="M 88 35 L 92 32 L 90 38 Z" fill="#ffffff" opacity="0.6" />
+      </svg>
+    </div>
+
+    <!-- FC 4: Window/curtains -->
+    <div class="float-card fc-4" data-card="4">
+      <svg viewBox="0 0 120 150" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="curtBg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3a342a" />
+            <stop offset="50%" stop-color="#1a1612" />
+            <stop offset="100%" stop-color="#0a0805" />
+          </linearGradient>
+          <linearGradient id="lightStreak" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="rgba(255,240,210,0.6)" />
+            <stop offset="50%" stop-color="rgba(255,220,180,0.3)" />
+            <stop offset="100%" stop-color="rgba(255,200,150,0.1)" />
+          </linearGradient>
+        </defs>
+        <rect width="120" height="150" fill="url(#curtBg)" />
+        <!-- Curtain folds -->
+        <path d="M 10 0 L 14 150 L 22 150 L 18 0 Z" fill="#2a241c" opacity="0.8" />
+        <path d="M 30 0 L 28 150 L 36 150 L 34 0 Z" fill="#3a342a" opacity="0.6" />
+        <!-- Window with light -->
+        <rect x="50" y="20" width="40" height="100" fill="url(#lightStreak)" />
+        <!-- Light bleed -->
+        <ellipse cx="70" cy="70" rx="40" ry="50" fill="rgba(255,230,180,0.15)" />
+        <!-- Wall texture -->
+        <rect x="92" y="0" width="28" height="150" fill="#1a1410" />
+        <!-- Tassel -->
+        <ellipse cx="36" cy="80" rx="3" ry="6" fill="#5a4030" />
+        <line x1="36" y1="86" x2="36" y2="100" stroke="#3a281c" stroke-width="2" />
+      </svg>
+    </div>
+
+    <!-- FC 5: White clothing/garment -->
+    <div class="float-card fc-5" data-card="5">
+      <svg viewBox="0 0 140 170" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="whiteBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f0ece2" />
+            <stop offset="100%" stop-color="#d8d2c4" />
+          </linearGradient>
+        </defs>
+        <rect width="140" height="170" fill="url(#whiteBg)" />
+        <!-- White trousers/pants suggestion -->
+        <path d="M 40 0 L 40 170 L 60 170 L 75 60 L 60 0 Z" fill="#ffffff" />
+        <path d="M 75 60 L 90 170 L 110 170 L 110 0 L 95 0 Z" fill="#fafaf4" />
+        <!-- Mirror reflection edge on right -->
+        <rect x="110" y="0" width="30" height="170" fill="rgba(255,255,255,0.5)" />
+        <line x1="110" y1="0" x2="110" y2="170" stroke="rgba(0,0,0,0.08)" stroke-width="1" />
+        <!-- Fold shadows -->
+        <path d="M 50 20 L 52 100 L 48 100 Z" fill="rgba(0,0,0,0.04)" />
+        <path d="M 80 30 L 82 120 L 78 120 Z" fill="rgba(0,0,0,0.05)" />
+        <!-- Shoe edge at bottom -->
+        <ellipse cx="55" cy="168" rx="20" ry="6" fill="#e8e2d2" />
+      </svg>
+    </div>
+
+    <!-- FC 6: Orange/red gradient blob -->
+    <div class="float-card fc-6" data-card="6">
+      <svg viewBox="0 0 130 110" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="blobGrad" cx="0.5" cy="0.5" r="0.7">
+            <stop offset="0%" stop-color="#ff5a3a" />
+            <stop offset="40%" stop-color="#ee7a3a" />
+            <stop offset="100%" stop-color="#d4541a" />
+          </radialGradient>
+          <radialGradient id="blobHot" cx="0.6" cy="0.4" r="0.4">
+            <stop offset="0%" stop-color="rgba(255,100,80,0.9)" />
+            <stop offset="100%" stop-color="rgba(255,100,80,0)" />
+          </radialGradient>
+        </defs>
+        <rect width="130" height="110" fill="url(#blobGrad)" />
+        <!-- Hot spot -->
+        <rect width="130" height="110" fill="url(#blobHot)" />
+        <!-- Subtle highlight -->
+        <ellipse cx="40" cy="35" rx="25" ry="20" fill="rgba(255,200,150,0.3)" />
+        <!-- Inner darker swirl -->
+        <ellipse cx="80" cy="55" rx="35" ry="25" fill="rgba(180,40,20,0.3)" />
+      </svg>
+    </div>
+
+    <!-- ============= SPHERE (image grid) ============= -->
+    <div class="sphere" id="sphere">
+      <div class="sphere-inner" id="sphereInner">
+
+        <!-- Row 1 -->
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3a3a32" />
+                <stop offset="100%" stop-color="#1a1a14" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t1)" />
+            <path d="M 0 60 L 100 60 L 100 100 L 0 100 Z" fill="#0a0805" />
+            <ellipse cx="50" cy="60" rx="60" ry="8" fill="rgba(180,120,60,0.3)" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="skinT" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#d8a892" />
+                <stop offset="100%" stop-color="#a87862" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#skinT)" />
+            <!-- Lips -->
+            <ellipse cx="50" cy="55" rx="28" ry="10" fill="#c8584a" />
+            <ellipse cx="50" cy="52" rx="26" ry="6" fill="#dc6858" opacity="0.7" />
+            <path d="M 22 55 Q 50 62 78 55" stroke="#8a3025" stroke-width="1.5" fill="none" />
+            <!-- Lower lip highlight -->
+            <ellipse cx="50" cy="62" rx="20" ry="3" fill="rgba(255,180,160,0.4)" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t3" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#d0c8b8" />
+                <stop offset="100%" stop-color="#9a9080" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t3)" />
+            <!-- Eggs/orbs -->
+            <ellipse cx="30" cy="50" rx="12" ry="14" fill="#eae0d0" />
+            <ellipse cx="55" cy="40" rx="14" ry="16" fill="#e0d4c0" />
+            <ellipse cx="75" cy="60" rx="13" ry="15" fill="#dcd0bc" />
+            <ellipse cx="28" cy="46" rx="3" ry="4" fill="rgba(255,255,255,0.5)" />
+            <ellipse cx="52" cy="35" rx="3" ry="4" fill="rgba(255,255,255,0.5)" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t4" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#888070" />
+                <stop offset="100%" stop-color="#3a342a" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t4)" />
+            <rect x="0" y="0" width="100" height="40" fill="#1a1612" />
+            <rect x="0" y="60" width="100" height="40" fill="#5a4838" opacity="0.5" />
+          </svg>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t5" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f4f0e6" />
+                <stop offset="100%" stop-color="#c8c0b0" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t5)" />
+            <!-- White shirt with collar/strap -->
+            <path d="M 0 0 L 100 0 L 100 100 L 0 100 Z" fill="#f8f4ea" />
+            <path d="M 35 0 L 45 30 L 35 100 L 25 100 L 30 30 Z" fill="#3a342a" />
+            <path d="M 40 100 L 50 60 L 60 100 Z" fill="#1a1612" opacity="0.4" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t6Bg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c8623e" />
+                <stop offset="100%" stop-color="#8a3a1e" />
+              </linearGradient>
+              <linearGradient id="vase" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#d8c4a8" />
+                <stop offset="100%" stop-color="#9a7a58" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t6Bg)" />
+            <!-- Vase -->
+            <path d="M 40 25 Q 40 22 50 22 Q 60 22 60 25 L 58 32 Q 70 38 70 55 Q 70 75 50 80 Q 30 75 30 55 Q 30 38 42 32 Z" fill="url(#vase)" />
+            <!-- Vase highlight -->
+            <ellipse cx="42" cy="48" rx="4" ry="14" fill="rgba(255,240,210,0.4)" />
+            <!-- Shadow -->
+            <ellipse cx="50" cy="85" rx="20" ry="3" fill="rgba(0,0,0,0.3)" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t7" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#aa5a3a" />
+                <stop offset="100%" stop-color="#6a3018" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t7)" />
+            <!-- Texture suggestion -->
+            <ellipse cx="30" cy="40" rx="60" ry="10" fill="rgba(0,0,0,0.15)" transform="rotate(-15 30 40)" />
+            <ellipse cx="60" cy="65" rx="50" ry="8" fill="rgba(0,0,0,0.12)" transform="rotate(-10 60 65)" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t8" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#d8b89a" />
+                <stop offset="100%" stop-color="#a07858" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t8)" />
+            <!-- Hand fragment with jewelry -->
+            <ellipse cx="50" cy="60" rx="35" ry="40" fill="#c8a888" />
+            <!-- Ring -->
+            <ellipse cx="48" cy="55" rx="8" ry="3" fill="#3a2c20" />
+            <circle cx="48" cy="55" r="1.5" fill="#f4d870" />
+          </svg>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t9" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3a342c" />
+                <stop offset="100%" stop-color="#1a1612" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t9)" />
+            <!-- Car wheel detail with red center -->
+            <circle cx="50" cy="60" r="38" fill="#5a5048" />
+            <circle cx="50" cy="60" r="28" fill="#3a342a" />
+            <circle cx="50" cy="60" r="16" fill="#888078" />
+            <circle cx="50" cy="60" r="10" fill="#b8423a" />
+            <circle cx="50" cy="60" r="5" fill="#dc4838" />
+            <!-- Spokes -->
+            <line x1="50" y1="35" x2="50" y2="85" stroke="#1a1612" stroke-width="1" />
+            <line x1="25" y1="60" x2="75" y2="60" stroke="#1a1612" stroke-width="1" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t10" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c0c0bc" />
+                <stop offset="100%" stop-color="#5a5854" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t10)" />
+            <!-- Spoons -->
+            <ellipse cx="40" cy="35" rx="14" ry="10" fill="#e0e0dc" transform="rotate(-20 40 35)" />
+            <path d="M 38 42 L 30 80" stroke="#888884" stroke-width="6" stroke-linecap="round" />
+            <ellipse cx="65" cy="50" rx="13" ry="9" fill="#d8d8d4" transform="rotate(15 65 50)" />
+            <path d="M 67 58 L 75 90" stroke="#888884" stroke-width="6" stroke-linecap="round" />
+            <!-- Highlights -->
+            <ellipse cx="38" cy="32" rx="6" ry="3" fill="rgba(255,255,255,0.6)" transform="rotate(-20 38 32)" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t11" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c8682e" />
+                <stop offset="100%" stop-color="#7a3a1a" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t11)" />
+            <!-- Sand dunes -->
+            <path d="M 0 50 Q 25 35 50 45 Q 75 55 100 40 L 100 100 L 0 100 Z" fill="#a04820" opacity="0.7" />
+            <path d="M 0 65 Q 30 55 60 65 Q 80 70 100 60 L 100 100 L 0 100 Z" fill="#8a3a1a" opacity="0.7" />
+            <!-- Texture lines -->
+            <path d="M 10 70 Q 30 65 50 70" stroke="rgba(60,20,5,0.3)" stroke-width="0.5" fill="none" />
+            <path d="M 15 80 Q 35 75 55 80" stroke="rgba(60,20,5,0.3)" stroke-width="0.5" fill="none" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t12" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c8a888" />
+                <stop offset="100%" stop-color="#886850" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t12)" />
+            <!-- Hand close-up with ring -->
+            <ellipse cx="50" cy="55" rx="50" ry="40" fill="#b89878" />
+            <ellipse cx="60" cy="40" rx="12" ry="4" fill="#5a4030" />
+            <circle cx="58" cy="40" r="2" fill="#d4a040" />
+          </svg>
+        </div>
+
+        <!-- Row 4 -->
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t13" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5a4838" />
+                <stop offset="100%" stop-color="#2a1c12" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t13)" />
+            <ellipse cx="50" cy="60" rx="40" ry="30" fill="#3a2818" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t14" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#888884" />
+                <stop offset="100%" stop-color="#4a4844" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t14)" />
+            <!-- Continued spoon edge -->
+            <ellipse cx="50" cy="30" rx="20" ry="12" fill="#a8a8a4" />
+            <path d="M 50 38 L 50 100" stroke="#5a5854" stroke-width="8" stroke-linecap="round" />
+            <ellipse cx="50" cy="28" rx="14" ry="6" fill="rgba(255,255,255,0.4)" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t15" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#a8623e" />
+                <stop offset="100%" stop-color="#5a2a18" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t15)" />
+            <!-- Sand pattern continued -->
+            <path d="M 0 30 Q 25 25 50 30 Q 75 35 100 25" stroke="rgba(60,20,5,0.4)" stroke-width="1" fill="none" />
+            <path d="M 0 50 Q 30 45 60 50 Q 85 55 100 48" stroke="rgba(60,20,5,0.4)" stroke-width="1" fill="none" />
+            <path d="M 0 70 Q 25 65 55 72 Q 80 75 100 68" stroke="rgba(60,20,5,0.4)" stroke-width="1" fill="none" />
+          </svg>
+        </div>
+        <div class="tile">
+          <svg class="tile-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="t16" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3a2c20" />
+                <stop offset="100%" stop-color="#1a0e08" />
+              </linearGradient>
+            </defs>
+            <rect width="100" height="100" fill="url(#t16)" />
+            <ellipse cx="50" cy="50" rx="40" ry="30" fill="#2a1810" />
+          </svg>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============= SEARCH BAR ============= -->
+    <div class="search-bar" id="searchBar">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+        <path d="M 17 17 L 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      <span class="search-divider"></span>
+      <input class="search-input" type="text" id="searchInput" placeholder="Search Cosmos" readonly />
+      <button class="search-btn" id="searchBtn" aria-label="More options">
+        <span class="dot-pattern">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+    </div>
+
+  </div>
+</div>

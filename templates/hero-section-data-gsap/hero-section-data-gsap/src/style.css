@@ -1,0 +1,603 @@
+:root {
+  /* Color Palette */
+  --bg-page: #ffffff;
+  --text-main: #2d2d2d;
+  --text-muted: #6b7280;
+  --clay-dark: #333333;
+  --clay-light-blue: #d2ecec;
+  --clay-yellow: #f6c042;
+  --clay-purple: #c4b5d6;
+  /* 3D Clay Shadows */
+  --clay-shadow-out: 8px 12px 20px rgba(0, 0, 0, 0.08),
+    -8px -12px 20px rgba(255, 255, 255, 0.9);
+  --clay-shadow-in: inset 3px 6px 10px rgba(255, 255, 255, 0.8),
+    inset -3px -6px 10px rgba(0, 0, 0, 0.05);
+  --clay-dark-out: 6px 10px 15px rgba(0, 0, 0, 0.15),
+    -4px -6px 12px rgba(255, 255, 255, 0.4);
+  --clay-dark-in: inset 2px 4px 8px rgba(255, 255, 255, 0.15),
+    inset -2px -4px 8px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  overflow-x: hidden;
+  min-height: 120vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+
+/* --- Navigation --- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  margin-bottom: 40px;
+  z-index: 100;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  /* Placeholder for 3D box logo */
+  background: linear-gradient(135deg, #eee, #ccc);
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.logo-icon::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 12px;
+  height: 12px;
+  background: #333;
+  border-radius: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-links li:hover {
+  color: var(--text-muted);
+}
+
+.nav-links li.has-dropdown::after {
+  content: " ⌄";
+  font-size: 12px;
+}
+
+.btn-outline {
+  border: 1px solid var(--clay-dark);
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 4px;
+  /* Image has square-ish borders for top right btn */
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline:hover {
+  background: #f5f5f5;
+}
+
+/* --- Main Layout --- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 40px;
+}
+
+/* --- Left Column --- */
+.left-col {
+  flex: 1;
+  max-width: 450px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  color: var(--text-main);
+}
+
+.desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 380px;
+}
+
+.btn-dark {
+  background-color: var(--clay-dark);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--clay-dark-out), var(--clay-dark-in);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  transition: transform 0.1s ease;
+}
+
+.btn-dark:active {
+  transform: scale(0.96) translateY(2px);
+}
+
+/* Bottom Left Workspace Features */
+.workspace-features {
+  margin-top: 60px;
+}
+
+.wf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+
+.wf-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.wf-header a {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+
+.wf-cards {
+  display: flex;
+  gap: 12px;
+}
+
+.wf-card {
+  height: 60px;
+  border-radius: 16px;
+  box-shadow: var(--clay-shadow-out), var(--clay-shadow-in);
+  border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wf-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  z-index: 5;
+}
+
+.wf-1 {
+  width: 60px;
+  background: var(--clay-light-blue);
+}
+
+.wf-2 {
+  width: 100px;
+  background: var(--clay-yellow);
+}
+
+.wf-3 {
+  width: 140px;
+  background: var(--clay-purple);
+  gap: 16px;
+}
+
+/* WF Inner SVGs */
+.wf-1 svg {
+  width: 24px;
+  height: 24px;
+  stroke: #333;
+  stroke-width: 2;
+  fill: none;
+}
+
+.wf-2 .shape-tr {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 26px solid #333;
+  transform: translateX(8px);
+  z-index: 2;
+}
+
+.wf-2 .shape-ci {
+  width: 24px;
+  height: 24px;
+  background: #9b87bc;
+  border-radius: 50%;
+  transform: translateX(-8px);
+  z-index: 1;
+}
+
+.wf-3 svg {
+  width: 24px;
+  height: 24px;
+  stroke: #333;
+  stroke-width: 1.5;
+  fill: none;
+  opacity: 0.6;
+}
+
+/* --- Right Column (Network Diagram) --- */
+.right-col {
+  flex: 1.2;
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Connecting Lines Container */
+.lines-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.line-path {
+  fill: none;
+  stroke: #333;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* 3D Clay Nodes */
+.node-container {
+  position: absolute;
+  z-index: 5;
+  perspective: 1000px;
+}
+
+.node {
+  border-radius: 30px;
+  box-shadow: var(--clay-shadow-out), var(--clay-shadow-in);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.node:hover {
+  transform: scale(1.05) translateZ(20px) !important;
+  box-shadow: 12px 18px 30px rgba(0, 0, 0, 0.1),
+    inset 3px 6px 10px rgba(255, 255, 255, 0.8),
+    inset -3px -6px 10px rgba(0, 0, 0, 0.05);
+  z-index: 20;
+}
+
+/* Specific Nodes based on image */
+/* Top Row */
+.n-top-small {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.n-top-small .node {
+  width: 60px;
+  height: 50px;
+  background: var(--clay-dark);
+  box-shadow: var(--clay-dark-out), var(--clay-dark-in);
+  border: none;
+  border-radius: 16px;
+}
+
+.n-top-small svg {
+  fill: white;
+  width: 20px;
+  height: 20px;
+}
+
+.n-tl {
+  top: 15%;
+  left: 15%;
+}
+
+.n-tl .node {
+  width: 140px;
+  height: 100px;
+  background: var(--clay-light-blue);
+}
+
+.n-tl img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+/* Placeholder for crossed lines graphic */
+.n-tr {
+  top: 15%;
+  right: 15%;
+}
+
+.n-tr .node {
+  width: 150px;
+  height: 110px;
+  background: var(--clay-yellow);
+}
+
+.n-tr img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* Placeholder for chart graphic */
+/* Middle Row */
+.n-ml {
+  top: 38%;
+  left: 0%;
+}
+
+.n-ml .node {
+  width: 140px;
+  height: 100px;
+  background: var(--clay-purple);
+}
+
+.n-ml img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* Placeholder for cloud graphic */
+.n-center {
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.n-center .node {
+  width: 180px;
+  height: 120px;
+  background: var(--clay-dark);
+  box-shadow: var(--clay-dark-out), var(--clay-dark-in);
+  border: none;
+  border-radius: 40px;
+}
+
+.n-center img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+/* Placeholder for cylinder graphic */
+.n-mr {
+  top: 38%;
+  right: 0%;
+}
+
+.n-mr .node {
+  width: 140px;
+  height: 100px;
+  background: var(--clay-light-blue);
+}
+
+.n-mr img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* Placeholder for thumbs up graphic */
+/* Bottom Row */
+.n-bl {
+  top: 60%;
+  left: 18%;
+}
+
+.n-bl .node {
+  width: 150px;
+  height: 110px;
+  background: var(--clay-yellow);
+}
+
+.n-bl img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+/* Placeholder for user circle graphic */
+.n-bl-small {
+  top: 65%;
+  left: 8%;
+  z-index: 15;
+}
+
+.n-bl-small .node {
+  width: 50px;
+  height: 50px;
+  background: var(--clay-dark);
+  box-shadow: var(--clay-dark-out), var(--clay-dark-in);
+  border: none;
+  border-radius: 12px;
+}
+
+.n-bl-small svg {
+  stroke: white;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke-width: 2;
+}
+
+.n-br {
+  top: 60%;
+  right: 18%;
+}
+
+.n-br .node {
+  width: 140px;
+  height: 100px;
+  background: var(--clay-purple);
+}
+
+.n-br img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* Placeholder for globe graphic */
+.n-br-small {
+  top: 65%;
+  right: 8%;
+  z-index: 15;
+}
+
+.n-br-small .node {
+  width: 50px;
+  height: 50px;
+  background: var(--clay-dark);
+  box-shadow: var(--clay-dark-out), var(--clay-dark-in);
+  border: none;
+  border-radius: 12px;
+}
+
+.n-br-small svg {
+  fill: white;
+  width: 20px;
+  height: 20px;
+}
+
+/* Bottom Center */
+.n-bottom {
+  top: 82%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.n-bottom .node {
+  width: 150px;
+  height: 110px;
+  background: var(--clay-light-blue);
+}
+
+.n-bottom img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+/* Placeholder for hex graphic */
+/* Decorative Star */
+.deco-star {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-col {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .desc {
+    margin: 0 auto;
+  }
+
+  .wf-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .right-col {
+    width: 100%;
+    transform: scale(0.8);
+    margin-top: 40px;
+  }
+
+  .lines-container {
+    display: none;
+  }
+
+  /* Hide complex lines on mobile */
+}

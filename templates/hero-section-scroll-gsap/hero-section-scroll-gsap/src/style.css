@@ -1,0 +1,209 @@
+:root {
+  --bg-color: #ffffff;
+  --text-dark: #111111;
+  --text-gray: #6b7280;
+  --accent-yellow: #facc15;
+  --btn-dark: #171717;
+
+  /* 3D Clay Shadows */
+  --clay-yellow: inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(250, 204, 21, 0.2);
+
+  --clay-dark-btn: inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 0, 0.15);
+
+  --clay-card-center: 0 30px 60px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2), inset 2px 2px 5px rgba(255, 255, 255, 0.2);
+
+  --clay-card-side: 0 15px 30px rgba(0, 0, 0, 0.1),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  min-height: 150vh; /* Extra height to demonstrate scroll */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.pill-yellow {
+  background-color: var(--accent-yellow);
+  color: #422006;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: var(--clay-yellow);
+}
+
+.status-text {
+  color: var(--text-gray);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+h1 .light-text {
+  color: var(--text-gray);
+}
+
+.subheadline {
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.5;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+.cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-dark {
+  background-color: var(--btn-dark);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--clay-dark-btn);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.btn-dark:active {
+  transform: translateY(1px);
+}
+
+.btn-light {
+  background-color: transparent;
+  color: var(--text-dark);
+  border: none;
+  padding: 14px 24px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-light:hover {
+  background-color: #f3f4f6;
+}
+
+/* --- Gallery Section --- */
+.gallery-wrapper {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.gallery-card {
+  position: absolute;
+  border-radius: 24px;
+  overflow: hidden;
+  background: white;
+  will-change: transform;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Center Card (Main Focus) */
+.card-center {
+  width: 340px;
+  height: 460px;
+  z-index: 10;
+  box-shadow: var(--clay-card-center);
+  border: 6px solid #111; /* Gives it a tablet/device edge look */
+  background-color: #111; /* fallback */
+  transition: transform 0.3s ease-out;
+}
+
+.card-center:hover {
+  transform: scale(1.03) translateY(-10px) !important;
+}
+
+/* Left Card */
+.card-left {
+  width: 300px;
+  height: 380px;
+  z-index: 5;
+  box-shadow: var(--clay-card-side);
+  border: 1px solid #e5e7eb;
+  transform: translateX(-120px) scale(0.9);
+  opacity: 0.9;
+}
+
+/* Right Card */
+.card-right {
+  width: 300px;
+  height: 380px;
+  z-index: 5;
+  box-shadow: var(--clay-card-side);
+  border: 1px solid #e5e7eb;
+  transform: translateX(120px) scale(0.9);
+  opacity: 0.9;
+}

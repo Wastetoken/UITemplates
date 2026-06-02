@@ -1,0 +1,260 @@
+:root {
+  --bg-color: #f9f8f4;
+  --text-dark: #1a1a1a;
+  --text-gray: #928f88;
+
+  /* 3D Clay Settings */
+  --clay-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15),
+    0px 5px 10px rgba(0, 0, 0, 0.05), inset 2px 2px 6px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.15);
+  --clay-shadow-hover: 0px 30px 50px rgba(0, 0, 0, 0.2),
+    0px 10px 15px rgba(0, 0, 0, 0.1), inset 3px 3px 8px rgba(255, 255, 255, 0.8),
+    inset -3px -3px 10px rgba(0, 0, 0, 0.2);
+  --card-gradient: linear-gradient(145deg, #ff6b00, #ff9e00);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  /* Extra height to demonstrate scroll animations */
+  min-height: 200vh;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 5vh;
+}
+
+/* --- Typography --- */
+.text-layer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(-5%);
+}
+
+.small-title {
+  font-size: clamp(32px, 4vw, 64px);
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -1px;
+  margin-bottom: -1vw; /* Pulls the big text closer */
+  z-index: 5;
+}
+
+.massive-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.75;
+  font-size: clamp(120px, 22vw, 300px);
+  font-weight: 900;
+  color: var(--text-gray);
+  letter-spacing: -0.06em;
+  text-transform: lowercase;
+}
+
+.word-1 {
+  z-index: 2;
+}
+.word-2 {
+  z-index: 4; /* Overlaps some cards naturally if layered */
+}
+
+/* --- 3D Clay Cards Layer --- */
+.cards-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none; /* Let clicks pass through empty space */
+}
+
+.card-wrapper {
+  position: absolute;
+  pointer-events: auto; /* Re-enable interaction on the cards themselves */
+  will-change: transform;
+}
+
+.clay-card {
+  width: 100%;
+  height: 100%;
+  background: var(--card-gradient);
+  border-radius: 16px;
+  box-shadow: var(--clay-shadow);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.clay-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--card-gradient);
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.clay-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  /* Filter to help blend placeholders into the orange theme */
+  filter: contrast(1.1) brightness(1.05);
+  transition: transform 0.4s ease;
+}
+
+/* Hover States for Interactivity */
+.clay-card:hover {
+  box-shadow: var(--clay-shadow-hover);
+  transform: scale(1.08) translateZ(20px);
+}
+
+.clay-card:hover img {
+  transform: scale(1.1);
+}
+
+/* --- Specific Card Positioning & Sizing --- */
+/* Using percentages to keep it responsive and similar to the image */
+
+.c1 {
+  top: 30%;
+  left: 16%;
+  width: 11vw;
+  height: 16vw;
+  min-width: 100px;
+  min-height: 140px;
+}
+.c2 {
+  top: 45%;
+  left: 22%;
+  width: 13vw;
+  height: 18vw;
+  min-width: 120px;
+  min-height: 160px;
+  z-index: 2;
+}
+.c3 {
+  top: 42%;
+  left: 32%;
+  width: 18vw;
+  height: 23vw;
+  min-width: 160px;
+  min-height: 200px;
+  z-index: 5;
+}
+.c4 {
+  top: 40%;
+  left: 48%;
+  width: 11vw;
+  height: 15vw;
+  min-width: 100px;
+  min-height: 140px;
+  z-index: 1;
+}
+.c5 {
+  top: 30%;
+  left: 56%;
+  width: 18vw;
+  height: 23vw;
+  min-width: 160px;
+  min-height: 200px;
+  z-index: 4;
+}
+.c6 {
+  top: 48%;
+  left: 72%;
+  width: 10vw;
+  height: 14vw;
+  min-width: 90px;
+  min-height: 130px;
+  z-index: 2;
+}
+.c7 {
+  top: 40%;
+  left: 78%;
+  width: 13vw;
+  height: 18vw;
+  min-width: 120px;
+  min-height: 160px;
+  z-index: 3;
+}
+
+/* Scroll instruction */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-gray);
+  opacity: 0.6;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 3;
+  fill: none;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-5px) translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-layer {
+    display: none; /* Simplify on mobile for pure text focus, or adjust sizing heavily */
+  }
+  .hero-section {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,121 @@
+<!-- Funnel Display: distinctive humanist display sans with chunky black weights -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<div class="top-bar"></div>
+
+<div class="page">
+
+  <!-- ============= NAV ============= -->
+  <nav>
+    <div class="nav-pill">
+      <a href="#" class="logo">FirstPlace</a>
+      <button class="nav-link active" data-tab="why">Why Us</button>
+      <button class="nav-link" data-tab="about">About Us</button>
+      <button class="nav-link" data-tab="portfolio">Portfolio</button>
+      <button class="book-cta" id="bookCtaNav">Book a call</button>
+    </div>
+  </nav>
+
+  <!-- ============= HERO ============= -->
+  <main class="hero">
+    <h1 class="headline" id="headline">
+      <span class="word">We</span>
+      <span class="word">drive</span>
+      <span class="word">growth</span>
+      <span class="word">to</span>
+      <span class="word">your</span>
+      <span class="word">business</span>
+      <span class="arrow">
+        <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 6 38 L 18 26 L 26 32 L 38 16" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M 30 14 L 40 14 L 40 24" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    </h1>
+
+    <p class="subtitle" id="subtitle">
+      Unlock your brand's potential with our proven marketing expertise. From strategy to execution, we drive growth.
+    </p>
+
+    <button class="cta-yellow" id="ctaBig">
+      Book a call
+      <span class="cta-circle">
+        <svg viewBox="0 0 16 16" fill="none">
+          <path d="M 5 11 L 11 5 M 7 5 L 11 5 L 11 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    </button>
+  </main>
+
+  <!-- ============= CARDS GRID ============= -->
+  <section class="cards-grid">
+
+    <!-- Services -->
+    <div class="card-base services-card" id="servicesCard">
+      <h2 class="card-title">Services</h2>
+      <div class="tags-container" id="tagsContainer">
+        <span class="tag black" data-tag="web" style="top:20%; left:18%; transform:rotate(-4deg);">Web Design</span>
+        <span class="tag white" data-tag="social" style="top:42%; left:0%; transform:rotate(-3deg);">Social Media</span>
+        <span class="tag black" data-tag="marketing" style="top:42%; left:55%; transform:rotate(-5deg);">Marketing</span>
+        <span class="tag white" data-tag="paid" style="top:62%; left:14%; transform:rotate(2deg);">
+          <span class="tag-icon">
+            <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 6 1 L 7.2 4.8 L 11 6 L 7.2 7.2 L 6 11 L 4.8 7.2 L 1 6 L 4.8 4.8 Z" fill="currentColor" />
+            </svg>
+          </span>
+          Paid Ads
+        </span>
+        <span class="tag white" data-tag="branding" style="top:62%; left:55%; transform:rotate(4deg);">Branding</span>
+        <span class="tag black" data-tag="content" style="top:84%; left:6%; transform:rotate(-2deg);">Content Creation</span>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-card">
+      <div class="stat-half stat-dark" id="statTop">
+        <div>
+          <div class="stat-number" id="stat1Num">1.2M+</div>
+        </div>
+        <p class="stat-desc">users have interacted with websites built by us.</p>
+      </div>
+      <div class="stat-half stat-light" id="statBottom">
+        <div>
+          <div class="stat-number" id="stat2Num">$3M</div>
+        </div>
+        <p class="stat-desc">in funding raised by start-ups we've worked with.</p>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="card-base testimonial-card">
+      <div class="quote-mark">&ldquo;</div>
+      <div class="testimonial-text" id="testimonialText">
+        <p id="testimonialP1">The final product exceeded my expectations.</p>
+        <p id="testimonialP2">Impressed with the results!</p>
+      </div>
+      <div class="testimonial-avatars" id="testimonialAvatars">
+        <span class="avatar-mini">
+          <svg class="fb" viewBox="0 0 32 32">
+            <circle cx="16" cy="12" r="5" fill="rgba(255,255,255,0.4)" />
+            <path d="M 4 30 Q 4 20 16 20 Q 28 20 28 30 Z" fill="rgba(255,255,255,0.4)" />
+          </svg>
+          <img src="https://i.pravatar.cc/80?img=12" alt="" aria-hidden="true" />
+        </span>
+        <span class="avatar-mini">
+          <svg class="fb" viewBox="0 0 32 32">
+            <circle cx="16" cy="12" r="5" fill="rgba(255,255,255,0.4)" />
+            <path d="M 4 30 Q 4 20 16 20 Q 28 20 28 30 Z" fill="rgba(255,255,255,0.4)" />
+          </svg>
+          <img src="https://i.pravatar.cc/80?img=47" alt="" aria-hidden="true" />
+        </span>
+        <span class="author-label" id="authorInitials">AS.</span>
+      </div>
+    </div>
+
+  </section>
+</div>
